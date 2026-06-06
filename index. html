@@ -32,9 +32,7 @@
         .btn-primary { background-color: #FFB703; color: #0B132B; }
         .btn-primary:hover { background-color: #E09F00; transform: translateY(-2px); }
         .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: #FFFFFF; }
-        .btn-secondary:hover { background: rgba(255,255,255,0.05); transform: translateY(-2px); }
-
-        /* Institutional Services Section */
+        .btn-secondary:hover { background: rgba(255,255,255,0.05); transform: translateY(-2px); }        /* Institutional Services Section */
         .section-padding { padding: 100px 10%; }
         .section-title { font-size: 32px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; }
         .section-subtitle { color: #FFB703; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 50px; }
