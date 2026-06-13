@@ -1,118 +1,317 @@
-   <!DOCTYPE html>
+   I 
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareBridge'07 | Dynamic Global Ltd</title>
     <style>
-        * {margin:0;padding:0;box-sizing:border-box;font-family:'Helvetica Neue',Arial,sans-serif;scroll-behavior:smooth;}
+        /* Premium Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
         :root {
             --navy: #0A1931;
             --gold: #D4AF37;
             --green: #1B5E20;
             --white: #FFFFFF;
             --light-gray: #F5F5F5;
+            --dark-gray: #333333;
         }
-        body {background-color: var(--white);color: #333;line-height: 1.6;}
-        .header {background-color: var(--navy);padding: 1.5rem 5%;display: flex;align-items: center;gap: 1.5rem;border-bottom: 3px solid var(--gold);}
-        .logo-img {width: 80px;height: 80px;object-fit: contain;}
-        .logo-text h1 {font-size: 2rem;font-weight: 700;color: var(--white);letter-spacing: 1px;}
-        .logo-text h1 span {color: var(--gold);}
-        .logo-text.tagline {font-size: 0.85rem;color: var(--gold);text-transform: uppercase;letter-spacing: 2px;margin-top: 0.3rem;}
-        .hero {background-color: var(--navy);color: var(--white);padding: 5rem 5%;text-align: center;}
-        .hero-logo {width: 200px;margin: 0 auto 2rem;}
-        .hero h2 {font-size: 3rem;font-weight: 800;line-height: 1.1;margin-bottom: 1rem;}
-        .hero.subtitle {font-size: 1.8rem;font-weight: 300;color: var(--light-gray);margin-bottom: 2rem;}
-        .btn {display: inline-block;background-color: var(--gold);color: var(--navy);padding: 1rem 2.5rem;font-weight: 700;text-decoration: none;border-radius: 4px;transition: all 0.3s ease;margin-top: 1rem;border: 2px solid var(--gold);}
-        .btn:hover {background-color: transparent;color: var(--gold);}
-        .section {padding: 4rem 5%;max-width: 1200px;margin: 0 auto;}
-        .section h3 {font-size: 2.5rem;color: var(--navy);margin-bottom: 2rem;text-align: center;}
-        .about-grid {display: grid;grid-template-columns: 1fr 2fr;gap: 3rem;align-items: center;margin-top: 2rem;}
-        .founder-img {width: 100%;max-width: 300px;border-radius: 8px;box-shadow: 0 10px 30px rgba(0,0,0,0.1);}
-        .founder-bio h4 {font-size: 1.5rem;color: var(--navy);margin-bottom: 0.5rem;}
-        .founder-bio.title {color: var(--gold);font-weight: 600;margin-bottom: 1rem;}
-        .founder-bio p {margin-bottom: 1rem;}
-        .tags {display: flex;flex-wrap: wrap;gap: 0.5rem;margin: 1.5rem 0;}
-        .tag {background: var(--light-gray);padding: 0.3rem 0.8rem;border-radius: 20px;font-size: 0.85rem;color: var(--navy);}
-        .footer {background-color: var(--navy);color: var(--white);text-align: center;padding: 3rem 5%;}
-        .footer.tagline {color: var(--gold);font-size: 0.9rem;margin-bottom: 1.5rem;letter-spacing: 1px;}
-        .contact-links {margin: 1rem 0;}
-        .contact-links a {color: var(--gold);text-decoration: none;margin: 0 1rem;}
-        .contact-links a:hover {text-decoration: underline;}
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--navy);
+            padding: 1.5rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: var(--white); /* Fallback backing for the logo */
+        }
+
+        .logo-text h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .logo-text h1 span {
+            color: var(--gold);
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0.3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--light-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Main Layout Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        /* Book Products Showcase */
+        .book-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--green);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .book-card.status-preview {
+            border-top: 4px solid var(--gold);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .badge.available { background: #E8F5E9; color: var(--green); }
+        .badge.preview { background: #FFF8E1; color: #B78103; }
+
+        /* Sidebar Profile */
+        .sidebar {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            height: fit-content;
+            border-bottom: 4px solid var(--navy);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 3px solid var(--gold);
+        }
+
+        .sidebar h4 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar .author-title {
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--navy);
+            padding: 0.8rem 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-secondary {
+            background-color: var(--green);
+            border-color: var(--green);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--green);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 5%;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer p {
+            color: var(--light-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Mobile Styles */
         @media (max-width: 768px) {
-            .header {flex-direction: column;text-align: center;}
-            .hero h2 {font-size: 2rem;}
-            .hero.subtitle {font-size: 1.2rem;}
-            .about-grid {grid-template-columns: 1fr;text-align: center;}
-            .founder-img {margin: 0 auto;}
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .hero .subtitle {
+                font-size: 1.4rem;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+
     <header class="header">
-        <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img">
+        <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img" onerror="this.style.display='none'">
         <div class="logo-text">
             <h1>CAREBRIDGE<span>'07</span></h1>
-            <div class="tagline">DYNAMIC GLOBAL LTD. RC: 8734346</div>
+            <div class="tagline">Dynamic Global Ltd</div>
         </div>
     </header>
 
     <section class="hero">
-        <img src="logo.png" alt="CareBridge'07" class="hero-logo">
-        <h2>Transforming Human Dignity into Auditable</h2>
-        <div class="subtitle">Care Governance Metrics</div>
-        <a href="#hub" class="btn">Access The Digital Hub</a>
+        <h2>Transforming Human Dignity into Auditable Metrics</h2>
+        <div class="subtitle">Next-Generation Care Governance Frameworks.</div>
     </section>
 
-    <section class="section" id="about">
-        <h3>About CareBridge'07</h3>
-        <p style="text-align:center;max-width:800px;margin:0 auto 3rem;">
-            <strong>CareBridge'07 Dynamic Global Ltd</strong> is a registered social enterprise building auditable frameworks for care governance. We specialize in facilitation, capacity building, and humanitarian development — transforming human dignity into measurable metrics for governments, NGOs, and health systems.
-        </p>
+    <main class="main-container">
         
-        <div class="about-grid">
-            <img src="ayomide.jpg" alt="Ayomide Idris Sanni" class="founder-img">
-            <div class="founder-bio">
-                <h4>Ayomide Idris Sanni, MSW</h4>
-                <div class="title">Founder & Executive Director</div>
-                <p>
-                    Social policy practitioner and originator of the Geriatric Dignity Index (GDI). YALI alumnus with World Bank NG-CARES programme experience. Builds frameworks that turn care policy into auditable human outcomes.
-                </p>
-                <p>
-                    Author of <em>The Dignity of Care: Rethinking How We Support the Elderly in a Changing World</em>. MSW, University of Ibadan.
-                </p>
-                <div class="tags">
-                    <span class="tag">Care Governance</span>
-                    <span class="tag">Gerontology</span>
-                    <span class="tag">Social Protection</span>
-                    <span class="tag">Data-Driven Policy</span>
-                    <span class="tag">Community Resilience</span>
+        <div class="content-section">
+            
+            <div id="about">
+                <h3>Our Vision</h3>
+                <p>We challenge traditional models of care delivery by building revolutionary frameworks that measure what truly matters: dignity, strict accountability, and real human outcomes. CareBridge'07 Dynamic Global Ltd addresses critical regulatory gaps through data-driven governance structures that perfectly align operational performance metrics with patient dignity.</p>
+            </div>
+
+            <div id="products">
+                <h3>Digital Products & Publications</h3>
+                
+                <div class="book-card">
+                    <span class="badge available">Available Now</span>
+                    <h4>The Dignity of Care</h4>
+                    <p style="margin-top: 0.5rem;">A deep dive into anchoring healthcare and global institutional frameworks back into measurable human dignity. This book establishes actionable steps to auditing quality metrics effectively.</p>
+                    <a href="#" class="btn">Purchase Digital Book</a>
+                </div>
+
+                <div class="book-card status-preview">
+                    <span class="badge preview">Manuscript Sneak Peek</span>
+                    <h4>Care Governance Deficit</h4>
+                    <p style="margin-top: 0.5rem;">An evidence-based masterclass addressing how modern networks fail to accurately quantify care quality. Spanning 9 chapters, this framework outlines transforming care options from costly liabilities into value-generating ecosystems.</p>
+                    <a href="#" class="btn btn-secondary">Read Chapter 1 Preview</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="section" id="hub" style="background:var(--light-gray);">
-        <h3>The Care Governance Hub</h3>
-        <p style="text-align:center;max-width:700px;margin:0 auto 2rem;">
-            Download frameworks, audit tools, and metrics from <em>The Care Governance Deficit</em> manuscript.
-            Built for health systems, NGOs, and policymakers ready to measure what matters.
-        </p>
-        <div style="text-align:center;">
-            <p><strong>Coming Soon:</strong> Paid downloads, member portal, and GDI certification tools.</p>
-            <a href="mailto:Carebridge07global@gmail.com?subject=CareBridge'07 Hub Waitlist" class="btn">Join Waitlist</a>
         </div>
-    </section>
+
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Author Profile Image" class="profile-img" onerror="this.style.removeAttribute('src'); this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+            <h4>Your Name</h4>
+            <div class="author-title">Author & Care Governance Visionary</div>
+            <p style="font-size: 0.95rem; text-align: center;">Welcome to my digital platform. As an author and consultant, my life's mission is constructing transparent, auditable frameworks that guarantee human dignity across international systems.</p>
+        </aside>
+
+    </main>
 
     <footer class="footer">
-        <div class="tagline">BRIDGING CARE. RESTORING DIGNITY. TRANSFORMING LIVES.</div>
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank">LinkedIn</a>
-            <a href="mailto:Carebridge07global@gmail.com">Email</a>
-            <a href="https://www.amazon.com/dp/B0GXSFP61Z" target="_blank">Book on Amazon</a>
-            <a href="https://github.com/07-dynamic-global" target="_blank">GitHub</a>
-        </div>
-        <p>&copy; 2026 CareBridge'07 Dynamic Global Ltd. RC: 8734346. All Rights Reserved.</p>
+        <p>&copy; 2026 CareBridge'07 Dynamic Global Ltd. All Rights Reserved.</p>
+        <p>Transforming Care Through Auditable Dignity</p>
     </footer>
+
 </body>
-</html>                .                
+</html>
+```
+
+
+
