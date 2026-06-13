@@ -22,6 +22,7 @@
             --white: #FFFFFF;
             --light-gray: #F5F5F5;
             --dark-gray: #333333;
+            --border-radius: 6px;
         }
 
         body {
@@ -30,291 +31,604 @@
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Top Brand Navigation */
         .header {
             background-color: var(--navy);
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
             border-bottom: 3px solid var(--gold);
+            gap: 1rem;
         }
 
-        .logo-img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
+        @media (min-width: 992px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-placeholder {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--gold), #AA7C11);
             border-radius: 50%;
-            background: var(--white); /* Fallback backing for the logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            border: 2px solid var(--white);
         }
 
         .logo-text h1 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--white);
             letter-spacing: 1px;
             line-height: 1;
         }
 
-        .logo-text h1 span {
-            color: var(--gold);
-        }
-
-        .tagline {
-            font-size: 0.85rem;
+        .logo-text h1 span { color: var(--gold); }
+        .logo-text p {
+            font-size: 0.75rem;
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-top: 0.2rem;
+        }
+
+        /* Navigation Menu Hub */
+        .nav-hub {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            width: 100%;
+        }
+
+        @media (min-width: 992px) {
+            .nav-hub { width: auto; }
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--gold);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-btn.active {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Institutional Positioning Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(10, 25, 49, 0.93), rgba(10, 25, 49, 0.96)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 4.5rem 5%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .institution-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .hero-banner h2 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-banner p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Counter Metrics */
+        .metrics-bar {
+            background-color: var(--light-gray);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
+            text-align: center;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .metric-card h3 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            font-weight: 800;
+        }
+
+        .metric-card h3 span { color: var(--gold); }
+        .metric-card p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-top: 0.2rem;
+            font-weight: bold;
+        }
+
+        /* Structural Content Containers */
+        .app-view {
+            display: none; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 5%;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .app-view.active-view { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--gold);
+            padding-left: 1.2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1rem;
             margin-top: 0.3rem;
         }
 
-        /* Hero Section */
-        .hero {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 6rem 5% 4rem;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: var(--light-gray);
-            margin-bottom: 2.5rem;
-        }
-
-        /* Main Layout Content */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 5%;
+        /* 3-Pillar Layout Grid */
+        .grid-3 {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .content-section {
-            display: flex;
-            flex-direction: column;
-            gap: 3.5rem;
-        }
-
-        h3 {
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 1.5rem;
-            border-left: 5px solid var(--gold);
-            padding-left: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-gray);
-        }
-
-        /* Book Products Showcase */
-        .book-card {
-            background: var(--light-gray);
+        .pillar-card {
+            background: var(--white);
+            border: 1px solid #E0E0E0;
             padding: 2rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--green);
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            position: relative;
+            overflow: hidden;
         }
 
-        .book-card.status-preview {
-            border-top: 4px solid var(--gold);
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--navy);
         }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 20px;
+        .pillar-card.accent-gold::before { background: var(--gold); }
+        .pillar-card.accent-green::before { background: var(--green); }
+
+        .pillar-card h4 {
+            font-size: 1.3rem;
+            color: var(--navy);
             margin-bottom: 1rem;
         }
 
-        .badge.available { background: #E8F5E9; color: var(--green); }
-        .badge.preview { background: #FFF8E1; color: #B78103; }
-
-        /* Sidebar Profile */
-        .sidebar {
-            background-color: var(--light-gray);
-            padding: 2rem;
+        /* GovTech Interactive Simulator */
+        .dashboard-container {
+            background: #0d1b2e;
             border-radius: 8px;
-            height: fit-content;
-            border-bottom: 4px solid var(--navy);
+            border: 1px solid #1e293b;
+            color: #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            display: block;
-            border: 3px solid var(--gold);
+        .dash-header {
+            background: #07111e;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
         }
 
-        .sidebar h4 {
-            font-size: 1.4rem;
-            color: var(--navy);
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .sidebar .author-title {
-            font-size: 0.9rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            text-align: center;
+        .dash-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            background: rgba(27, 94, 32, 0.3);
+            color: #81c784;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
             font-weight: bold;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
         }
 
-        /* Buttons */
+        .dash-pulse {
+            width: 8px; height: 8px; background: #4caf50; border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.6; }
+        }
+
+        .dash-body {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dash-widget {
+            background: #112240;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #233554;
+            text-align: center;
+        }
+
+        .dash-widget h5 { font-size: 0.85rem; color: #8892b0; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .dash-widget .value { font-size: 2rem; font-weight: 700; color: var(--gold); }
+        .dash-widget .value.green-txt { color: #4caf50; }
+
+        /* Premium Buttons and Controls */
         .btn {
             display: inline-block;
             background-color: var(--gold);
             color: var(--navy);
-            padding: 0.8rem 2rem;
+            padding: 0.75rem 1.75rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
             transition: all 0.3s ease;
             border: 2px solid var(--gold);
             cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
         }
 
-        .btn:hover {
-            background-color: transparent;
-            color: var(--gold);
+        .btn:hover { background-color: transparent; color: var(--gold); }
+        .btn-green { background-color: var(--green); border-color: var(--green); color: var(--white); }
+        .btn-green:hover { color: var(--green); background: transparent; }
+        .btn-outline { background-color: transparent; color: var(--white); border-color: var(--white); }
+        .btn-outline:hover { background-color: var(--white); color: var(--navy); }
+
+        .form-group { margin-bottom: 1.2rem; text-align: left; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.4rem; color: var(--navy); }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #CCC; border-radius: var(--border-radius); font-size: 1rem; }
+
+        /* Founder Section with Imbedded Headshot Architecture */
+        .founder-section {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            text-align: left;
         }
 
-        .btn-secondary {
-            background-color: var(--green);
-            border-color: var(--green);
-            color: var(--white);
+        @media (min-width: 768px) {
+            .founder-section { grid-template-columns: 1fr 3fr; }
         }
 
-        .btn-secondary:hover {
-            background-color: transparent;
-            color: var(--green);
+        .founder-img-box {
+            text-align: center;
         }
 
-        /* Footer */
+        .founder-avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
         .footer {
             background-color: var(--navy);
             color: var(--white);
             text-align: center;
-            padding: 2.5rem 5%;
+            padding: 3rem 5%;
             font-size: 0.9rem;
-            border-top: 3px solid var(--gold);
+            border-top: 4px solid var(--gold);
         }
 
-        .footer p {
-            color: var(--light-gray);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive Mobile Styles */
-        @media (max-width: 768px) {
-            .main-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            .hero .subtitle {
-                font-size: 1.4rem;
-            }
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
+        .footer p { color: #8892b0; margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img" onerror="this.style.display='none'">
-        <div class="logo-text">
-            <h1>CAREBRIDGE<span>'07</span></h1>
-            <div class="tagline">Dynamic Global Ltd</div>
+        <div class="brand">
+            <div class="logo-placeholder">CB</div>
+            <div class="logo-text">
+                <h1>CAREBRIDGE<span>'07</span></h1>
+                <p>Dynamic Global Ltd</p>
+            </div>
         </div>
+        <nav class="nav-hub">
+            <button class="nav-btn active" onclick="switchView('home-view', this)">Home</button>
+            <button class="nav-btn" onclick="switchView('frameworks-view', this)">Frameworks</button>
+            <button class="nav-btn" onclick="switchView('services-view', this)">Services</button>
+            <button class="nav-btn" onclick="switchView('publications-view', this)">Publications</button>
+            <button class="nav-btn" onclick="switchView('dashboard-view', this)">GovTech Demo</button>
+            <button class="nav-btn" onclick="switchView('contact-view', this)">Contact Hub</button>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h2>Transforming Human Dignity into Auditable Metrics</h2>
-        <div class="subtitle">Next-Generation Care Governance Frameworks.</div>
+    <section class="hero-banner">
+        <div class="institution-badge">Social Enterprise + Policy Research Institute + GovTech Platform</div>
+        <h2>Restoring Dignity Through Quantifiable Care Governance</h2>
+        <p>We build highly auditable, data-driven frameworks that transform global care delivery from cost-center liabilities into value-generating ecosystems.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="btn" onclick="switchView('frameworks-view', document.querySelectorAll('.nav-btn')[1])">Explore Frameworks</button>
+            <button class="btn btn-outline" onclick="switchView('dashboard-view', document.querySelectorAll('.nav-btn')[4])">Launch Dashboard Preview</button>
+        </div>
     </section>
 
-    <main class="main-container">
-        
-        <div class="content-section">
-            
-            <div id="about">
-                <h3>Our Vision</h3>
-                <p>We challenge traditional models of care delivery by building revolutionary frameworks that measure what truly matters: dignity, strict accountability, and real human outcomes. CareBridge'07 Dynamic Global Ltd addresses critical regulatory gaps through data-driven governance structures that perfectly align operational performance metrics with patient dignity.</p>
+    <div class="metrics-bar">
+        <div class="metric-card">
+            <h3>GDI<span>™</span></h3>
+            <p>Global Dignity Index</p>
+        </div>
+        <div class="metric-card">
+            <h3>9<span> Chapters</span></h3>
+            <p>Evidence-Based Governance</p>
+        </div>
+        <div class="metric-card">
+            <h3>100%<span> Auditable</span></h3>
+            <p>Accountability Matrix</p>
+        </div>
+    </div>
+
+    <main id="home-view" class="app-view active-view">
+        <div class="section-header">
+            <h2>Thematic Operations</h2>
+            <p>Our operational architecture targets systemic administrative deficits across three global impact spaces.</p>
+        </div>
+        <div class="grid-3">
+            <div class="pillar-card">
+                <h4>Care Facilitation</h4>
+                <p>Constructing direct, high-integrity infrastructure pathways that guarantee elderly care and support tracking mechanisms prioritize human outcomes over bureaucratic convenience.</p>
             </div>
-
-            <div id="products">
-                <h3>Digital Products & Publications</h3>
-                
-                <div class="book-card">
-                    <span class="badge available">Available Now</span>
-                    <h4>The Dignity of Care</h4>
-                    <p style="margin-top: 0.5rem;">A deep dive into anchoring healthcare and global institutional frameworks back into measurable human dignity. This book establishes actionable steps to auditing quality metrics effectively.</p>
-                    <a href="#" class="btn">Purchase Digital Book</a>
-                </div>
-
-                <div class="book-card status-preview">
-                    <span class="badge preview">Manuscript Sneak Peek</span>
-                    <h4>Care Governance Deficit</h4>
-                    <p style="margin-top: 0.5rem;">An evidence-based masterclass addressing how modern networks fail to accurately quantify care quality. Spanning 9 chapters, this framework outlines transforming care options from costly liabilities into value-generating ecosystems.</p>
-                    <a href="#" class="btn btn-secondary">Read Chapter 1 Preview</a>
-                </div>
+            <div class="pillar-card accent-gold">
+                <h4>Policy Consultancy</h4>
+                <p>Advising international institutions, corporate enterprise structures, and systemic healthcare providers on integrating auditable compliance models directly into executive protocols.</p>
             </div>
-
+            <div class="pillar-card accent-green">
+                <h4>Humanitarian Development</h4>
+                <p>Designing next-generation social business models that leverage technical infrastructure to build secure, sustainable health frameworks across emerging development communities.</p>
+            </div>
         </div>
 
-        <aside class="sidebar">
-            <img src="profile.jpg" alt="Author Profile Image" class="profile-img" onerror="this.style.removeAttribute('src'); this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
-            <h4>Your Name</h4>
-            <div class="author-title">Author & Care Governance Visionary</div>
-            <p style="font-size: 0.95rem; text-align: center;">Welcome to my digital platform. As an author and consultant, my life's mission is constructing transparent, auditable frameworks that guarantee human dignity across international systems.</p>
-        </aside>
+        <div style="margin-top: 4rem;" class="founder-section">
+            <div class="founder-img-box">
+                <img src="https://i.ibb.co/6RkmR0g1/Whats-App-Image-2026-06-13-at-15-51-57.jpg" alt="Ayomide Sanni" class="founder-avatar" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+            </div>
+            <div>
+                <h3 style="color:var(--navy); font-size:1.6rem; margin-bottom:0.5rem;">Strategic Visionary Message</h3>
+                <p style="font-style: italic; color:#555; margin-bottom:1rem;">"Traditional welfare frameworks fail because they treat human dignity as a descriptive sentiment instead of an administrative metric. We exist to fix that error natively through code, data-modeling, and relentless system auditability."</p>
+                <h5 style="color:var(--navy); font-size:1.1rem; font-weight:700;">Ayomide Sanni</h5>
+                <p style="font-size:0.8rem; color:var(--gold); font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-top:0.1rem;">Founder & Lead Architect</p>
+                <div style="margin-top: 1.2rem;">
+                    <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank" class="btn btn-green" style="font-size:0.75rem; padding: 0.5rem 1.2rem;">Connect via LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </main>
 
+    <main id="frameworks-view" class="app-view">
+        <div class="section-header">
+            <h2>The Care Governance Matrix</h2>
+            <p>Our proprietary GovTech algorithms measure metrics that verify and restore institutional dignity.</p>
+        </div>
+        <div class="grid-3">
+            <div class="pillar-card">
+                <h4 style="color:var(--gold);">GDI</h4>
+                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Global Dignity Index</h5>
+                <p>A multi-factor analytical evaluation metric scoring how effectively institutional environments align human support with globally verified quality-of-life protection matrices.</p>
+            </div>
+            <div class="pillar-card">
+                <h4 style="color:var(--gold);">DAI</h4>
+                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Dignity Accountability Indicators</h5>
+                <p>Real-time technical tracking indicators measuring data points across operational speed, user-reported sentiment metrics, and care transparency vector tracking.</p>
+            </div>
+            <div class="pillar-card">
+                <h4 style="color:var(--gold);">CGA</h4>
+                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Care Governance Audits</h5>
+                <p>Comprehensive algorithmic compliance engines built directly for state operations, regional governments, and tier-1 care structures to discover systematic leakage.</p>
+            </div>
+        </div>
+    </main>
+
+    <main id="services-view" class="app-view">
+        <div class="section-header">
+            <h2>Institutional Solutions & Trainings</h2>
+            <p>How we partner with development institutions and policy makers.</p>
+        </div>
+        <div class="grid-3">
+            <div class="pillar-card">
+                <h4>Systemic Certification</h4>
+                <p>Comprehensive regulatory evaluation and licensing for facilities looking to be officially categorized under the care governance compliance benchmark.</p>
+            </div>
+            <div class="pillar-card">
+                <h4>GovTech Customization</h4>
+                <p>Integrating our real-time tracking code engines into existing state or institutional enterprise management infrastructure frameworks securely.</p>
+            </div>
+            <div class="pillar-card">
+                <h4>Research & Policy Briefs</h4>
+                <p>Commissioned data collection and economic modeling exploring systemic policy structural vulnerabilities inside changing elder support markets globally.</p>
+            </div>
+        </div>
+    </main>
+
+    <main id="publications-view" class="app-view">
+        <div class="section-header">
+            <h2>The Literature Portfolio</h2>
+            <p>Authoritative frameworks mapping foundational paradigms to active administrative deployment.</p>
+        </div>
+        <div class="grid-3">
+            <div class="pillar-card accent-gold">
+                <span style="background:#E8F5E9; color:var(--green); font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:10px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Published & Live</span>
+                <h4>The Dignity of Care</h4>
+                <p style="font-size:0.9rem; margin-bottom:1.5rem;"><em>Subheadline: Rethinking how we support the elderly in a Changing World.</em> Available globally via international Amazon KDP publication pathways.</p>
+                <a href="https://www.amazon.de/dp/B0GXSFP61Z" target="_blank" class="btn" style="width:100%;">Acquire from Amazon Store</a>
+            </div>
+            <div class="pillar-card accent-green">
+                <span style="background:#FFF8E1; color:#B78103; font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:10px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Manuscript Executive Preview</span>
+                <h4>Care Governance Deficit</h4>
+                <p style="font-size:0.9rem; margin-bottom:1.5rem;">An evidence-based masterclass spanning 9 crucial chapters outlining the transition strategy away from institutional system structural deficits.</p>
+                <button class="btn btn-green" style="width:100%;" onclick="alert('Downloading Document System Package: Executive Summary (Chapters 1-9 Framework Profile)... Complete.')">Download Executive Summary</button>
+            </div>
+        </div>
+    </main>
+
+    <main id="dashboard-view" class="app-view">
+        <div class="section-header">
+            <h2>Technical GovTech Demo Interface</h2>
+            <p>Simulation module showing how development partners interact natively with our data-stream dashboards.</p>
+        </div>
+        <div class="dashboard-container">
+            <div class="dash-header">
+                <span style="font-weight:bold; font-size:0.85rem; letter-spacing:0.5px;">CAREBRIDGE CORE SYSTEM ENGINE v2.66</span>
+                <div class="dash-status"><div class="dash-pulse"></div>SYSTEM ACTIVE</div>
+            </div>
+            <div class="dash-body">
+                <div class="dash-widget">
+                    <h5>GDI GLOBAL ACCREDITATION</h5>
+                    <div class="value">88.42<span style="font-size:1rem; color:#8892b0;"> /100</span></div>
+                </div>
+                <div class="dash-widget">
+                    <h5>ACTIVE COMPLIANCE MATRIX</h5>
+                    <div class="value green-txt">99.1%</div>
+                </div>
+                <div class="dash-widget">
+                    <h5>AUDITED PROTOCOLS STACK</h5>
+                    <div class="value">14,208</div>
+                </div>
+            </div>
+            <div style="padding:0 2rem 2rem; text-align:center;">
+                <p style="color:#8892b0; font-size:0.85rem; margin-bottom:1rem;">Dashboard authentication engine simulates real-time cross-border tracking protocols for NGO oversight committees.</p>
+                <button class="btn btn-outline" style="font-size:0.8rem;" onclick="alert('Dashboard Security Module Status: Authorized client configuration required. Initializing demo environment bypass details.')">Simulate Protocol Trigger</button>
+            </div>
+        </div>
+    </main>
+
+    <main id="contact-view" class="app-view">
+        <div class="section-header">
+            <h2>Partnership & Consultation Hub</h2>
+            <p>Initiate corporate consultations, research engagements, or institutional evaluation pathways.</p>
+        </div>
+        <div style="max-width:600px; margin:0 auto; background:var(--light-gray); padding:2.5rem; border-radius:8px; border-bottom:4px solid var(--navy);">
+            <form onsubmit="event.preventDefault(); alert('Transmission Secured: CareBridge Administrative Engagement Core has logged your submission.');">
+                <div class="form-group">
+                    <label>Engagement Context Type</label>
+                    <select>
+                        <option>Institutional Partnership Inquiry</option>
+                        <option>Government Policy Consultation Scheduling</option>
+                        <option>Media Access & Research Brief Acquisition</option>
+                        <option>Philanthropic Support Ecosystem</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Organization Name</label>
+                    <input type="text" placeholder="e.g. World Bank Group / Federal Health Ministry" required>
+                </div>
+                <div class="form-group">
+                    <label>Official Secure Email Address</label>
+                    <input type="email" placeholder="name@organization.org" required>
+                </div>
+                <div class="form-group">
+                    <label>Operational Message Intent Brief</label>
+                    <textarea rows="4" placeholder="Outline specific integration metrics requested..." required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Transmit Security Document Request</button>
+            </form>
+        </div>
     </main>
 
     <footer class="footer">
+        <div style="color: var(--gold); font-size: 0.85rem; font-weight: bold; letter-spacing: 2px; margin-bottom: 1rem;">BRIDGING CARE. RESTORING DIGNITY. TRANSFORMING LIVES.</div>
         <p>&copy; 2026 CareBridge'07 Dynamic Global Ltd. All Rights Reserved.</p>
-        <p>Transforming Care Through Auditable Dignity</p>
+        <p style="font-size:0.8rem; opacity:0.7;">Authoritative Social Enterprise + GovTech Platform Engineering Ecosystem</p>
     </footer>
 
+    <script>
+        function switchView(viewId, element) {
+            document.querySelectorAll('.app-view').forEach(view => {
+                view.classList.remove('active-view');
+            });
+            document.querySelectorAll('.nav-hub .nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const targetView = document.getElementById(viewId);
+            if(targetView) {
+                targetView.classList.add('active-view');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            if(element) {
+                element.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
 ```
 
-
-
-
-
-
-        
-
-
-                        
+            
