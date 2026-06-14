@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareBridge'07 | Dynamic Global Ltd</title>
+    <title>CareBridge'07 | Care Governance & GovTech Enterprise</title>
     <style>
-        /* Premium Reset & Typography */
+        /* Corporate Architecture Reset & Typography */
         * {
             margin: 0;
             padding: 0;
@@ -20,9 +20,9 @@
             --gold: #D4AF37;
             --green: #1B5E20;
             --white: #FFFFFF;
-            --light-gray: #F5F5F5;
-            --dark-gray: #333333;
-            --border-radius: 6px;
+            --light-gray: #F8F9FA;
+            --dark-gray: #1A202C;
+            --border-radius: 4px;
         }
 
         body {
@@ -34,15 +34,15 @@
         /* Top Brand Navigation */
         .header {
             background-color: var(--navy);
-            padding: 1rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             flex-direction: column;
             align-items: center;
             border-bottom: 3px solid var(--gold);
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             .header {
                 flex-direction: row;
                 justify-content: space-between;
@@ -52,22 +52,16 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
         }
 
-        .logo-placeholder {
+        .logo-img {
             width: 55px;
             height: 55px;
-            background: linear-gradient(135deg, var(--gold), #AA7C11);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy);
-            font-weight: 800;
-            font-size: 1.3rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            border: 2px solid var(--white);
+            object-fit: contain;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            background-color: transparent;
         }
 
         .logo-text h1 {
@@ -84,22 +78,23 @@
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-top: 0.2rem;
+            margin-top: 0.3rem;
+            font-weight: bold;
         }
 
-        /* Navigation Menu Hub */
+        /* Corporate App-Style Navigation Hub */
         .nav-hub {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.3rem;
+            gap: 0.2rem;
             justify-content: center;
             background: rgba(255,255,255,0.05);
-            padding: 0.5rem;
+            padding: 0.4rem;
             border-radius: var(--border-radius);
             width: 100%;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             .nav-hub { width: auto; }
         }
 
@@ -107,11 +102,11 @@
             background: transparent;
             border: none;
             color: var(--white);
-            padding: 0.5rem 1rem;
-            font-size: 0.82rem;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.8rem;
             font-weight: 600;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
             transition: all 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -119,7 +114,7 @@
 
         .nav-btn:hover {
             color: var(--gold);
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
         }
 
         .nav-btn.active {
@@ -127,158 +122,179 @@
             color: var(--navy);
         }
 
-        /* Institutional Positioning Hero Banner */
+        /* Enterprise Positioning Hero Banner */
         .hero-banner {
-            background: linear-gradient(rgba(10, 25, 49, 0.93), rgba(10, 25, 49, 0.96)), 
+            background: linear-gradient(rgba(10, 25, 49, 0.94), rgba(10, 25, 49, 0.97)), 
                         url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
             text-align: center;
-            padding: 4.5rem 5%;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 5.5rem 5%;
+            border-bottom: 4px solid var(--gold);
         }
 
         .institution-badge {
             display: inline-block;
             border: 1px solid var(--gold);
             color: var(--gold);
-            padding: 0.4rem 1.2rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 30px;
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 2rem;
             font-weight: 700;
             background: rgba(212, 175, 55, 0.05);
         }
 
         .hero-banner h2 {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.2;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto 1.5rem;
         }
 
         .hero-banner p {
-            font-size: 1.1rem;
-            color: var(--light-gray);
-            max-width: 750px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            color: #E2E8F0;
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
         }
 
-        /* Counter Metrics */
-        .metrics-bar {
-            background-color: var(--light-gray);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            padding: 2rem 5%;
-            text-align: center;
-            border-bottom: 1px solid #E0E0E0;
-        }
-
-        .metric-card h3 {
-            font-size: 2.2rem;
-            color: var(--navy);
-            font-weight: 800;
-        }
-
-        .metric-card h3 span { color: var(--gold); }
-        .metric-card p {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-top: 0.2rem;
-            font-weight: bold;
-        }
-
-        /* Structural Content Containers */
+        /* Views Interface Router */
         .app-view {
             display: none; 
             max-width: 1200px;
             margin: 0 auto;
-            padding: 3.5rem 5%;
-            animation: fadeIn 0.4s ease-in-out;
+            padding: 4rem 5%;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         .app-view.active-view { display: block; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .section-header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             border-left: 5px solid var(--gold);
             padding-left: 1.2rem;
+            text-align: left;
         }
 
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--navy);
+            font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .section-header p {
-            color: #666;
-            font-size: 1rem;
-            margin-top: 0.3rem;
+            color: #4A5568;
+            font-size: 1.1rem;
+            margin-top: 0.4rem;
         }
 
-        /* 3-Pillar Layout Grid */
-        .grid-3 {
+        /* Checkbox Data Layouts */
+        .list-check {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .list-check li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .list-check li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        /* Corporate Structural Information Layouts */
+        .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .pillar-card {
+        .corporate-card {
             background: var(--white);
-            border: 1px solid #E0E0E0;
-            padding: 2rem;
+            border: 1px solid #E2E8F0;
+            padding: 2.5rem 2rem;
             border-radius: var(--border-radius);
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            text-align: left;
         }
 
-        .pillar-card::before {
+        .corporate-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 4px;
             background: var(--navy);
         }
 
-        .pillar-card.accent-gold::before { background: var(--gold); }
-        .pillar-card.accent-green::before { background: var(--green); }
+        .corporate-card.gold-line::before { background: var(--gold); }
+        .corporate-card.green-line::before { background: var(--green); }
 
-        .pillar-card h4 {
+        .corporate-card h4 {
             font-size: 1.3rem;
             color: var(--navy);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        /* GovTech Interactive Simulator */
+        .corporate-card h5 {
+            font-size: 0.85rem;
+            color: #718096;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .corporate-card ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #4A5568;
+        }
+
+        .corporate-card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* GovTech Dashboard Component */
         .dashboard-container {
-            background: #0d1b2e;
-            border-radius: 8px;
-            border: 1px solid #1e293b;
-            color: #e2e8f0;
+            background: #0B132B;
+            border-radius: var(--border-radius);
+            color: #F8F9FA;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid #1C2541;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         .dash-header {
-            background: #07111e;
-            padding: 1rem;
+            background: #050A18;
+            padding: 1.2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid #1C2541;
         }
 
         .dash-status {
@@ -286,15 +302,15 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.8rem;
-            background: rgba(27, 94, 32, 0.3);
-            color: #81c784;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
+            background: rgba(27, 94, 32, 0.4);
+            color: #A5D6A7;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
             font-weight: bold;
         }
 
         .dash-pulse {
-            width: 8px; height: 8px; background: #4caf50; border-radius: 50%;
+            width: 8px; height: 8px; background: #66BB6A; border-radius: 50%;
             animation: pulse 1.5s infinite;
         }
 
@@ -305,37 +321,44 @@
         }
 
         .dash-body {
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
         }
 
         .dash-widget {
-            background: #112240;
+            background: #1C2541;
             padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid #233554;
+            border-radius: var(--border-radius);
+            border: 1px solid #3A506B;
             text-align: center;
         }
 
-        .dash-widget h5 { font-size: 0.85rem; color: #8892b0; text-transform: uppercase; margin-bottom: 0.5rem; }
-        .dash-widget .value { font-size: 2rem; font-weight: 700; color: var(--gold); }
-        .dash-widget .value.green-txt { color: #4caf50; }
+        .dash-widget h5 { font-size: 0.8rem; color: #94A3B8; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+        .dash-widget .value { font-size: 2.2rem; font-weight: 700; color: var(--gold); }
+        .dash-widget .value.green-txt { color: #66BB6A; }
 
-        /* Premium Buttons and Controls */
+        /* Premium Buttons Framework */
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
             background-color: var(--gold);
             color: var(--navy);
-            padding: 0.75rem 1.75rem;
+            padding: 0.8rem 2rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: var(--border-radius);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: 2px solid var(--gold);
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             text-align: center;
@@ -347,56 +370,77 @@
         .btn-outline { background-color: transparent; color: var(--white); border-color: var(--white); }
         .btn-outline:hover { background-color: var(--white); color: var(--navy); }
 
-        .form-group { margin-bottom: 1.2rem; text-align: left; }
-        .form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.4rem; color: var(--navy); }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #CCC; border-radius: var(--border-radius); font-size: 1rem; }
+        .form-grid {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--light-gray);
+            padding: 3rem 2.5rem;
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--navy);
+        }
 
-        /* Founder Section with Imbedded Headshot Architecture */
-        .founder-section {
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #CBD5E1; border-radius: var(--border-radius); font-size: 1rem; color: var(--dark-gray); }
+
+        /* Executive Portrait Frame Integration */
+        .founder-container {
             background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: center;
             text-align: left;
+            margin-top: 2rem;
         }
 
         @media (min-width: 768px) {
-            .founder-section { grid-template-columns: 1fr 3fr; }
+            .founder-container { grid-template-columns: 1fr 3fr; }
         }
 
-        .founder-img-box {
+        .founder-img-wrapper {
             text-align: center;
         }
 
-        .founder-avatar {
-            width: 170px;
-            height: 170px;
+        .founder-img {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--gold);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
+        /* Footer Architecture */
         .footer {
             background-color: var(--navy);
             color: var(--white);
             text-align: center;
-            padding: 3rem 5%;
+            padding: 3.5rem 5%;
             font-size: 0.9rem;
             border-top: 4px solid var(--gold);
         }
 
-        .footer p { color: #8892b0; margin-bottom: 0.5rem; }
+        .footer .footer-quote {
+            color: var(--gold);
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer p { color: #94A3B8; margin-bottom: 0.4rem; }
     </style>
 </head>
 <body>
 
     <header class="header">
         <div class="brand">
-            <div class="logo-placeholder">CB</div>
+            <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img" onerror="this.style.display='none';">
             <div class="logo-text">
                 <h1>CAREBRIDGE<span>'07</span></h1>
                 <p>Dynamic Global Ltd</p>
@@ -404,209 +448,270 @@
         </div>
         <nav class="nav-hub">
             <button class="nav-btn active" onclick="switchView('home-view', this)">Home</button>
-            <button class="nav-btn" onclick="switchView('frameworks-view', this)">Frameworks</button>
-            <button class="nav-btn" onclick="switchView('services-view', this)">Services</button>
+            <button class="nav-btn" onclick="switchView('about-view', this)">About Us</button>
+            <button class="nav-btn" onclick="switchView('frameworks-view', this)">CGA Frameworks</button>
             <button class="nav-btn" onclick="switchView('publications-view', this)">Publications</button>
-            <button class="nav-btn" onclick="switchView('dashboard-view', this)">GovTech Demo</button>
-            <button class="nav-btn" onclick="switchView('contact-view', this)">Contact Hub</button>
+            <button class="nav-btn" onclick="switchView('dashboard-view', this)">GovTech Dashboard</button>
+            <button class="nav-btn" onclick="switchView('contact-view', this)">Contact & Partnerships</button>
         </nav>
     </header>
 
     <section class="hero-banner">
-        <div class="institution-badge">Social Enterprise + Policy Research Institute + GovTech Platform</div>
-        <h2>Restoring Dignity Through Quantifiable Care Governance</h2>
-        <p>We build highly auditable, data-driven frameworks that transform global care delivery from cost-center liabilities into value-generating ecosystems.</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <button class="btn" onclick="switchView('frameworks-view', document.querySelectorAll('.nav-btn')[1])">Explore Frameworks</button>
-            <button class="btn btn-outline" onclick="switchView('dashboard-view', document.querySelectorAll('.nav-btn')[4])">Launch Dashboard Preview</button>
+        <div class="institution-badge">Care Governance | GovTech | Human Development Metrics | Safeguarding Systems | Social Innovation Think-Tank</div>
+        <h2>Pioneering Auditable Care Metrics, Human Dignity Governance, and Predictive Social Protection Systems for Emerging Economies</h2>
+        <p>We design data-driven frameworks that transform care, safeguarding, and social protection from charity-based interventions into measurable governance systems. Through proprietary indices, digital dashboards, and policy advisory services, CareBridge'07 empowers governments, development partners, educational institutions, and communities to measure, predict, and improve human wellbeing at scale.</p>
+        <div class="btn-group">
+            <button class="btn" onclick="switchView('frameworks-view', document.querySelectorAll('.nav-btn')[2])">Explore Our Frameworks</button>
+            <button class="btn btn-outline" onclick="switchView('contact-view', document.querySelectorAll('.nav-btn')[5])">Partner With Us</button>
+            <button class="btn btn-outline" onclick="switchView('contact-view', document.querySelectorAll('.nav-btn')[5])">Contact Us</button>
         </div>
     </section>
 
-    <div class="metrics-bar">
-        <div class="metric-card">
-            <h3>GDI<span>™</span></h3>
-            <p>Global Dignity Index</p>
-        </div>
-        <div class="metric-card">
-            <h3>9<span> Chapters</span></h3>
-            <p>Evidence-Based Governance</p>
-        </div>
-        <div class="metric-card">
-            <h3>100%<span> Auditable</span></h3>
-            <p>Accountability Matrix</p>
-        </div>
-    </div>
-
     <main id="home-view" class="app-view active-view">
         <div class="section-header">
-            <h2>Thematic Operations</h2>
-            <p>Our operational architecture targets systemic administrative deficits across three global impact spaces.</p>
+            <h2>Our Three Strategic Pillars</h2>
+            <p>Our structural operations target core systemic gaps across the global social impact ecosystem.</p>
         </div>
-        <div class="grid-3">
-            <div class="pillar-card">
-                <h4>Care Facilitation</h4>
-                <p>Constructing direct, high-integrity infrastructure pathways that guarantee elderly care and support tracking mechanisms prioritize human outcomes over bureaucratic convenience.</p>
+        <div class="grid-cards">
+            <div class="corporate-card">
+                <h4>1. Care Facilitation</h4>
+                <p>We design and coordinate dignity-centered support systems for vulnerable populations, particularly older persons and caregivers. Through community-based interventions, professional training, and care navigation models, we strengthen the informal and formal care economy while preserving autonomy and psychosocial wellbeing.</p>
             </div>
-            <div class="pillar-card accent-gold">
-                <h4>Policy Consultancy</h4>
-                <p>Advising international institutions, corporate enterprise structures, and systemic healthcare providers on integrating auditable compliance models directly into executive protocols.</p>
+            <div class="corporate-card gold-line">
+                <h4>2. Consultancy & Policy Advisory</h4>
+                <p>We provide specialized consulting services to governments, development agencies, NGOs, educational institutions, and corporate organizations in:</p>
+                <ul>
+                    <li>Social Protection Systems Design</li>
+                    <li>Human Dignity Metrics Development</li>
+                    <li>Monitoring and Evaluation Frameworks</li>
+                    <li>Governance Audits</li>
+                    <li>Safeguarding Systems</li>
+                    <li>Public Policy Analytics</li>
+                    <li>Data-Driven Social Impact Measurement</li>
+                </ul>
             </div>
-            <div class="pillar-card accent-green">
-                <h4>Humanitarian Development</h4>
-                <p>Designing next-generation social business models that leverage technical infrastructure to build secure, sustainable health frameworks across emerging development communities.</p>
+            <div class="corporate-card green-line">
+                <h4>3. Humanitarian Development</h4>
+                <p>We implement innovative, evidence-based initiatives that strengthen community resilience and improve outcomes for vulnerable populations through:</p>
+                <ul>
+                    <li>Care Workforce Development</li>
+                    <li>Community Empowerment</li>
+                    <li>Educational Safeguarding</li>
+                    <li>Disability Inclusion</li>
+                    <li>Elder Protection Systems</li>
+                    <li>Humanitarian Research</li>
+                    <li>Digital Social Innovation</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <main id="about-view" class="app-view">
+        <div class="section-header">
+            <h2>Who We Are</h2>
+            <p>CareBridge'07 Dynamic Global Ltd is a Nigerian social innovation and policy technology enterprise dedicated to institutionalizing human dignity through measurable and auditable care governance systems.</p>
+        </div>
+        
+        <h3 style="color:var(--navy); font-size:1.4rem; margin-bottom:0.5rem; text-align:left;">We operate at the intersection of:</h3>
+        <ul class="list-check" style="text-align:left;">
+            <li>Social Policy</li>
+            <li>GovTech & Social Analytics</li>
+            <li>Humanitarian Development</li>
+            <li>Care Systems Innovation</li>
+            <li>Public Sector Advisory</li>
+            <li>Research and Capacity Building</li>
+        </ul>
+        <p style="margin-top:1.5rem; font-size:1.1rem; text-align:left; color:#4A5568;">Our work transforms complex social challenges—including ageing, safeguarding, caregiver resilience, disability inclusion, and anti-bullying systems—into actionable metrics that can be monitored, financed, and governed.</p>
+
+        <div class="grid-cards" style="margin-top: 3rem;">
+            <div class="corporate-card" style="background:#F8F9FA;">
+                <h4>Our Vision</h4>
+                <p>To become Africa's leading Care Governance and Human Dignity Analytics Company, setting global standards for auditable social protection systems and predictive human development metrics.</p>
+            </div>
+            <div class="corporate-card gold-line" style="background:#F8F9FA;">
+                <h4>Our Mission</h4>
+                <p>To bridge care gaps and restore human dignity by developing evidence-based frameworks, digital tools, and policy solutions that empower governments, institutions, and communities to deliver measurable social impact.</p>
             </div>
         </div>
 
-        <div style="margin-top: 4rem;" class="founder-section">
-            <div class="founder-img-box">
-                <img src="https://i.ibb.co/6RkmR0g1/Whats-App-Image-2026-06-13-at-15-51-57.jpg" alt="Ayomide Sanni" class="founder-avatar" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+        <h3 style="color:var(--navy); font-size:1.6rem; margin-top:4rem; margin-bottom:1.5rem; border-bottom:2px solid var(--gold); padding-bottom:0.5rem; text-align:left;">Our Core Values</h3>
+        <div class="grid-cards">
+            <div class="corporate-card">
+                <h4>Dignity in Care</h4>
+                <p>Every human being deserves respect, autonomy, and meaningful participation regardless of age, ability, or circumstance.</p>
             </div>
-            <div>
-                <h3 style="color:var(--navy); font-size:1.6rem; margin-bottom:0.5rem;">Strategic Visionary Message</h3>
-                <p style="font-style: italic; color:#555; margin-bottom:1rem;">"Traditional welfare frameworks fail because they treat human dignity as a descriptive sentiment instead of an administrative metric. We exist to fix that error natively through code, data-modeling, and relentless system auditability."</p>
-                <h5 style="color:var(--navy); font-size:1.1rem; font-weight:700;">Ayomide Sanni</h5>
-                <p style="font-size:0.8rem; color:var(--gold); font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-top:0.1rem;">Founder & Lead Architect</p>
-                <div style="margin-top: 1.2rem;">
-                    <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank" class="btn btn-green" style="font-size:0.75rem; padding: 0.5rem 1.2rem;">Connect via LinkedIn Profile</a>
-                </div>
+            <div class="corporate-card">
+                <h4>Innovation</h4>
+                <p>We transform abstract social challenges into measurable governance solutions.</p>
+            </div>
+            <div class="corporate-card">
+                <h4>Integrity</h4>
+                <p>Our work is grounded in evidence, transparency, and accountability.</p>
+            </div>
+            <div class="corporate-card">
+                <h4>Community Empowerment</h4>
+                <p>We build local capacities and strengthen decentralized systems of care.</p>
+            </div>
+            <div class="corporate-card">
+                <h4>Sustainable Impact</h4>
+                <p>We prioritize scalable and financially sustainable interventions.</p>
             </div>
         </div>
     </main>
 
     <main id="frameworks-view" class="app-view">
         <div class="section-header">
-            <h2>The Care Governance Matrix</h2>
-            <p>Our proprietary GovTech algorithms measure metrics that verify and restore institutional dignity.</p>
+            <h2>Care Governance Architecture (CGA)</h2>
+            <p>From Charity to Governance — Proprietary frameworks that convert human dignity and social protection into measurable corporate and sovereign assets.</p>
         </div>
-        <div class="grid-3">
-            <div class="pillar-card">
-                <h4 style="color:var(--gold);">GDI</h4>
-                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Global Dignity Index</h5>
-                <p>A multi-factor analytical evaluation metric scoring how effectively institutional environments align human support with globally verified quality-of-life protection matrices.</p>
+        
+        <div class="grid-cards">
+            <div class="corporate-card gold-line">
+                <h4>Geriatric Dignity Index (GDI)</h4>
+                <h5>Focus Area Parameters:</h5>
+                <p>• Autonomy | • Agency | • Psychosocial Legacy | • Protection & Safety | • Participation</p>
+                <p style="margin-top:0.8rem;"><strong>Purpose:</strong> To provide governments and institutions with auditable metrics for elderly care governance.</p>
             </div>
-            <div class="pillar-card">
-                <h4 style="color:var(--gold);">DAI</h4>
-                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Dignity Accountability Indicators</h5>
-                <p>Real-time technical tracking indicators measuring data points across operational speed, user-reported sentiment metrics, and care transparency vector tracking.</p>
+            <div class="corporate-card gold-line">
+                <h4>Developmental Agency Index (DAI)</h4>
+                <h5>Focus Area Parameters:</h5>
+                <p>• Safety Baseline | • Peer Dynamics | • Institutional Equity</p>
+                <p style="margin-top:0.8rem;"><strong>Purpose:</strong> To create measurable and predictive anti-bullying and safeguarding systems within educational institutions.</p>
             </div>
-            <div class="pillar-card">
-                <h4 style="color:var(--gold);">CGA</h4>
-                <h5 style="margin-bottom:0.5rem; font-size:0.9rem; color:#666;">Care Governance Audits</h5>
-                <p>Comprehensive algorithmic compliance engines built directly for state operations, regional governments, and tier-1 care structures to discover systematic leakage.</p>
+            <div class="corporate-card">
+                <h4>Disability Inclusion Index (DII)</h4>
+                <p><strong>Measures:</strong> Structural accessibility frameworks and cross-border inclusion indices for persons living with disabilities.</p>
             </div>
-        </div>
-    </main>
-
-    <main id="services-view" class="app-view">
-        <div class="section-header">
-            <h2>Institutional Solutions & Trainings</h2>
-            <p>How we partner with development institutions and policy makers.</p>
-        </div>
-        <div class="grid-3">
-            <div class="pillar-card">
-                <h4>Systemic Certification</h4>
-                <p>Comprehensive regulatory evaluation and licensing for facilities looking to be officially categorized under the care governance compliance benchmark.</p>
+            <div class="corporate-card">
+                <h4>Caregiver Resilience Index (CRI)</h4>
+                <p><strong>Measures:</strong> The economic, psychological, and specialized professional wellbeing indicators tracking primary caregivers.</p>
             </div>
-            <div class="pillar-card">
-                <h4>GovTech Customization</h4>
-                <p>Integrating our real-time tracking code engines into existing state or institutional enterprise management infrastructure frameworks securely.</p>
-            </div>
-            <div class="pillar-card">
-                <h4>Research & Policy Briefs</h4>
-                <p>Commissioned data collection and economic modeling exploring systemic policy structural vulnerabilities inside changing elder support markets globally.</p>
+            <div class="corporate-card green-line">
+                <h4>Community Protection Index (CPI)</h4>
+                <p><strong>Measures:</strong> Vulnerability scaling, systemic community resilience, and active protection channels within at-risk populations and humanitarian settings.</p>
             </div>
         </div>
     </main>
 
     <main id="publications-view" class="app-view">
         <div class="section-header">
-            <h2>The Literature Portfolio</h2>
-            <p>Authoritative frameworks mapping foundational paradigms to active administrative deployment.</p>
+            <h2>Publications & Applied Literature</h2>
+            <p>Converting pioneering social observation research into auditable enterprise guidelines.</p>
         </div>
-        <div class="grid-3">
-            <div class="pillar-card accent-gold">
-                <span style="background:#E8F5E9; color:var(--green); font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:10px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Published & Live</span>
+        <div class="grid-cards">
+            <div class="corporate-card gold-line">
+                <span style="background:#E8F5E9; color:var(--green); font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:20px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Live Publication Ecosystem</span>
                 <h4>The Dignity of Care</h4>
-                <p style="font-size:0.9rem; margin-bottom:1.5rem;"><em>Subheadline: Rethinking how we support the elderly in a Changing World.</em> Available globally via international Amazon KDP publication pathways.</p>
-                <a href="https://www.amazon.de/dp/B0GXSFP61Z" target="_blank" class="btn" style="width:100%;">Acquire from Amazon Store</a>
+                <p style="font-size:0.95rem; margin-bottom:1.5rem; color:#4A5568;">A practical and human-centered guide that redefines caregiving through dignity, empathy, and evidence-based practice.</p>
+                <a href="https://www.amazon.de/dp/B0GXSFP61Z" target="_blank" class="btn" style="width:100%;">Order via Amazon Store Link</a>
             </div>
-            <div class="pillar-card accent-green">
-                <span style="background:#FFF8E1; color:#B78103; font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:10px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Manuscript Executive Preview</span>
-                <h4>Care Governance Deficit</h4>
-                <p style="font-size:0.9rem; margin-bottom:1.5rem;">An evidence-based masterclass spanning 9 crucial chapters outlining the transition strategy away from institutional system structural deficits.</p>
-                <button class="btn btn-green" style="width:100%;" onclick="alert('Downloading Document System Package: Executive Summary (Chapters 1-9 Framework Profile)... Complete.')">Download Executive Summary</button>
+            <div class="corporate-card green-line">
+                <span style="background:#FFF8E1; color:#B78103; font-size:0.7rem; font-weight:bold; padding:0.2rem 0.6rem; border-radius:20px; display:inline-block; margin-bottom:1rem; text-transform:uppercase;">Strategic Framework Manuscript</span>
+                <h4>The Care Governance Deficit</h4>
+                <h5>Transforming Social Policy into Auditable Care Metrics in Low- and Middle-Income Countries</h5>
+                <p style="font-size:0.95rem; color:#4A5568;">A pioneering policy framework introducing measurable and predictive systems for elder care governance, educational safeguarding, and humanitarian protection metrics.</p>
+                <button class="btn btn-green" style="width:100%; margin-top:1rem;" onclick="alert('Access Pipeline Engaged: Downloading Corporate Executive Summary (Chapters 1-9 Analytical Profile)... Verification Complete.')">Download Executive Summary</button>
+            </div>
+        </div>
+
+        <div class="founder-container">
+            <div class="founder-img-wrapper">
+                <img src="Whats-App-Image-2026-06-13-at-15-51-57.jpg" alt="Ayomide Idris Sanni, MSW" class="founder-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+            </div>
+            <div>
+                <h3 style="color:var(--navy); font-size:1.6rem; margin-bottom:0.2rem;">Ayomide Idris Sanni, MSW</h3>
+                <h5 style="color:var(--gold); font-size:0.9rem; font-weight:bold; text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem;">Founder and Managing Director</h5>
+                <p style="color:#4A5568; margin-bottom:1.2rem;">Ayomide Idris Sanni is a Social Work professional, policy researcher, and social innovation entrepreneur specializing in care governance, humanitarian development, and measurable social protection systems. His work focuses on transforming human dignity and social protection into auditable metrics capable of informing public policy, development finance, and institutional accountability across emerging economies.</p>
+                <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank" class="btn btn-green" style="font-size:0.75rem; padding: 0.5rem 1.2rem;">Verify Profile via LinkedIn</a>
             </div>
         </div>
     </main>
 
     <main id="dashboard-view" class="app-view">
         <div class="section-header">
-            <h2>Technical GovTech Demo Interface</h2>
-            <p>Simulation module showing how development partners interact natively with our data-stream dashboards.</p>
+            <h2>Care Governance Dashboard</h2>
+            <p>Our proprietary cloud-based analytics platform deploying decision support solutions across sovereign partner operations.</p>
         </div>
         <div class="dashboard-container">
             <div class="dash-header">
-                <span style="font-weight:bold; font-size:0.85rem; letter-spacing:0.5px;">CAREBRIDGE CORE SYSTEM ENGINE v2.66</span>
-                <div class="dash-status"><div class="dash-pulse"></div>SYSTEM ACTIVE</div>
+                <span style="font-weight:bold; font-size:0.85rem; letter-spacing:0.5px; color:#94A3B8;">MANAGED DIGITAL CORE INTERFACE v2.0</span>
+                <div class="dash-status"><div class="dash-pulse"></div>ANALYTICS ONLINE</div>
             </div>
             <div class="dash-body">
                 <div class="dash-widget">
-                    <h5>GDI GLOBAL ACCREDITATION</h5>
-                    <div class="value">88.42<span style="font-size:1rem; color:#8892b0;"> /100</span></div>
+                    <h5>Real-Time Monitoring Tracking</h5>
+                    <div class="value" style="color:var(--white);">Active</div>
                 </div>
                 <div class="dash-widget">
-                    <h5>ACTIVE COMPLIANCE MATRIX</h5>
-                    <div class="value green-txt">99.1%</div>
+                    <h5>Vulnerability Heat Mapping</h5>
+                    <div class="value" style="color:var(--gold);">Engine Syncing</div>
                 </div>
                 <div class="dash-widget">
-                    <h5>AUDITED PROTOCOLS STACK</h5>
-                    <div class="value">14,208</div>
+                    <h5>Compliance Benchmarking Matrix</h5>
+                    <div class="value green-txt">94.8%</div>
                 </div>
             </div>
-            <div style="padding:0 2rem 2rem; text-align:center;">
-                <p style="color:#8892b0; font-size:0.85rem; margin-bottom:1rem;">Dashboard authentication engine simulates real-time cross-border tracking protocols for NGO oversight committees.</p>
-                <button class="btn btn-outline" style="font-size:0.8rem;" onclick="alert('Dashboard Security Module Status: Authorized client configuration required. Initializing demo environment bypass details.')">Simulate Protocol Trigger</button>
+            <div style="padding:0 2rem 2.5rem; text-align:left;">
+                <h4 style="font-size:1rem; color:var(--gold); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.5px;">Predictive Enterprise Subsystems:</h4>
+                <ul style="margin-left:1.2rem; color:#94A3B8; font-size:0.9rem; margin-bottom:1.5rem; list-style-type:circle;">
+                    <li>Automated Social Protection Reporting Modules Active</li>
+                    <li>Institutional Anti-Bullying Baseline Metric Arrays Secured</li>
+                    <li>Sovereign Geriatric Vulnerability Evaluation Vectors Online</li>
+                </ul>
+                <button class="btn btn-outline" style="font-size:0.8rem; width:100%;" onclick="alert('Encryption Shield Engaged: Access requires active multi-factor executive partner token parameters. Instantiating isolated framework interface demo.')">Initialize GovTech System Simulation</button>
             </div>
         </div>
     </main>
 
     <main id="contact-view" class="app-view">
         <div class="section-header">
-            <h2>Partnership & Consultation Hub</h2>
-            <p>Initiate corporate consultations, research engagements, or institutional evaluation pathways.</p>
+            <h2>Institutional Collaborations & Engagement</h2>
+            <p>We welcome collaborations with Ministries of Social Development, Ministries of Education, National Senior Citizens Centres, UNICEF, World Bank Programs, Universities and Research Institutes, NGOs and Foundations, Corporate CSR Boards, and Humanitarian Agencies.</p>
         </div>
-        <div style="max-width:600px; margin:0 auto; background:var(--light-gray); padding:2.5rem; border-radius:8px; border-bottom:4px solid var(--navy);">
-            <form onsubmit="event.preventDefault(); alert('Transmission Secured: CareBridge Administrative Engagement Core has logged your submission.');">
+        
+        <div class="form-grid">
+            <form onsubmit="event.preventDefault(); alert('Transmission Secured: CareBridge Corporate Communications Desk has verified your organizational submission profile.');">
                 <div class="form-group">
-                    <label>Engagement Context Type</label>
+                    <label>Target Framework Engagement Alignment</label>
                     <select>
-                        <option>Institutional Partnership Inquiry</option>
-                        <option>Government Policy Consultation Scheduling</option>
-                        <option>Media Access & Research Brief Acquisition</option>
-                        <option>Philanthropic Support Ecosystem</option>
+                        <option>Ministries / Public Sector Advisory Integration</option>
+                        <option>Development Partners (UNICEF / World Bank Programs / UN)</option>
+                        <option>Educational Institutions / Safeguarding Audit Protocols</option>
+                        <option>Corporate CSR Boards / Policy Advisory Consultation</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Organization Name</label>
-                    <input type="text" placeholder="e.g. World Bank Group / Federal Health Ministry" required>
+                    <label>Organization / Entity Title</label>
+                    <input type="text" placeholder="e.g., Ministry of Social Development" required>
                 </div>
                 <div class="form-group">
-                    <label>Official Secure Email Address</label>
-                    <input type="email" placeholder="name@organization.org" required>
+                    <label>Official Corporate Email Address</label>
+                    <input type="email" placeholder="representative@institution.gov" required>
                 </div>
                 <div class="form-group">
-                    <label>Operational Message Intent Brief</label>
-                    <textarea rows="4" placeholder="Outline specific integration metrics requested..." required></textarea>
+                    <label>Consultation Framework Intent Brief</label>
+                    <textarea rows="4" placeholder="Outline clear integration milestones, audit metrics requested, or structural consultation scope required..." required></textarea>
                 </div>
-                <button type="submit" class="btn" style="width:100%;">Transmit Security Document Request</button>
+                <button type="submit" class="btn" style="width:100%;">Transmit Engagement Documentation Request</button>
             </form>
+            
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #CBD5E1; text-align: left; color: var(--navy);">
+                <h4 style="font-size:1.1rem; margin-bottom:1rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Corporate Registry & Comm Channel Node:</h4>
+                <p style="font-size:0.95rem; margin-bottom:0.4rem;"><strong>Nigerian Corporate Registration:</strong> RC 8734346</p>
+                <p style="font-size:0.95rem; margin-bottom:0.4rem;"><strong>Direct Secure Channels:</strong> Carebridge07global@gmail.com</p>
+                <p style="font-size:0.95rem; margin-bottom:0.4rem;"><strong>West Africa Communications:</strong> +234 802 850 7370</p>
+                <p style="font-size:0.95rem; margin-bottom:0.4rem;"><strong>Middle East Communications:</strong> +968 78538712</p>
+                <p style="font-size:0.95rem; margin-top:1.2rem; font-weight:bold; color:var(--dark-gray);">Headquarters Jurisdiction Node:</p>
+                <p style="font-size:0.9rem; color:#4A5568;">16 Akano Extension Close, Abayomi, Iwo Road, Ibadan, Oyo State, Nigeria.</p>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
-        <div style="color: var(--gold); font-size: 0.85rem; font-weight: bold; letter-spacing: 2px; margin-bottom: 1rem;">BRIDGING CARE. RESTORING DIGNITY. TRANSFORMING LIVES.</div>
+        <div class="footer-quote">"The future of social protection belongs to measurable, auditable, dignity-centered governance."</div>
+        <p style="font-weight:bold; color:var(--white); letter-spacing:1px; margin-bottom:0.8rem; text-transform:uppercase;">CAREBRIDGE'07 DYNAMIC GLOBAL LTD</p>
         <p>&copy; 2026 CareBridge'07 Dynamic Global Ltd. All Rights Reserved.</p>
-        <p style="font-size:0.8rem; opacity:0.7;">Authoritative Social Enterprise + GovTech Platform Engineering Ecosystem</p>
+        <p style="font-size:0.8rem; opacity:0.5; letter-spacing:0.5px;">Sovereign Operational Code Node: RC 8734346</p>
     </footer>
 
     <script>
@@ -629,6 +734,5 @@
     </script>
 </body>
 </html>
-```
+`
 
-            
