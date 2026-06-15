@@ -19,6 +19,9 @@
             --navy: #0A1931;
             --gold: #D4AF37;
             --green: #1B5E20;
+            --blue-green: #008080;
+            --yellow: #F59E0B;
+            --red: #DC2626;
             --white: #FFFFFF;
             --light-gray: #F8F9FA;
             --dark-gray: #1A202C;
@@ -61,7 +64,6 @@
             object-fit: contain;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: var(--border-radius);
-            background-color: transparent;
         }
 
         .logo-text h1 {
@@ -278,7 +280,17 @@
             margin-bottom: 0.4rem;
         }
 
-        /* GovTech Dashboard Component */
+        /* GovTech Operational Multi-Module System */
+        .govtech-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .govtech-grid { grid-template-columns: 1fr 1fr; }
+        }
+
         .dashboard-container {
             background: #0B132B;
             border-radius: var(--border-radius);
@@ -286,11 +298,13 @@
             overflow: hidden;
             border: 1px solid #1C2541;
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            padding: 1.5rem;
         }
 
         .dash-header {
             background: #050A18;
-            padding: 1.2rem;
+            padding: 1rem;
+            margin: -1.5rem -1.5rem 1.5rem -1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -320,24 +334,75 @@
             100% { transform: scale(0.9); opacity: 0.6; }
         }
 
-        .dash-body {
-            padding: 2.5rem 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
+        /* Form Controls */
+        .slider-group {
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+        .slider-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #94A3B8;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+        .slider-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--gold);
         }
 
-        .dash-widget {
+        /* Score Display Box */
+        .score-box {
             background: #1C2541;
             padding: 1.5rem;
             border-radius: var(--border-radius);
-            border: 1px solid #3A506B;
             text-align: center;
+            border: 1px solid #3A506B;
+            margin-bottom: 1.5rem;
+        }
+        .score-big {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+        .tier-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
         }
 
-        .dash-widget h5 { font-size: 0.8rem; color: #94A3B8; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
-        .dash-widget .value { font-size: 2.2rem; font-weight: 700; color: var(--gold); }
-        .dash-widget .value.green-txt { color: #66BB6A; }
+        /* Heatmaps and lists */
+        .map-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem;
+            border-bottom: 1px solid #1C2541;
+            font-weight: 500;
+        }
+        .status-dot {
+            display: inline-block;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        .ai-box {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px dashed var(--gold);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            color: #E2E8F0;
+            font-size: 0.9rem;
+            text-align: left;
+        }
 
         /* Premium Buttons Framework */
         .btn-group {
@@ -440,7 +505,7 @@
 
     <header class="header">
         <div class="brand">
-            <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img" onerror="this.style.display='none';">
+            <img src="logo.png" alt="CareBridge'07 Logo" class="logo-img" onerror="this.src='logo_png.png';">
             <div class="logo-text">
                 <h1>CAREBRIDGE<span>'07</span></h1>
                 <p>Dynamic Global Ltd</p>
@@ -616,7 +681,7 @@
 
         <div class="founder-container">
             <div class="founder-img-wrapper">
-                <img src="headshot.jpg" alt="Ayomide Idris Sanni, MSW" class="founder-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';">
+                <img src="headshot.jpg" alt="Ayomide Idris Sanni, MSW" class="founder-img" onerror="this.src='headshot_jpg.jpg'; this.onerror=function(){this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png';};">
             </div>
             <div>
                 <h3 style="color:var(--navy); font-size:1.6rem; margin-bottom:0.2rem;">Ayomide Idris Sanni, MSW</h3>
@@ -632,33 +697,78 @@
             <h2>Care Governance Dashboard</h2>
             <p>Our proprietary cloud-based analytics platform deploying decision support solutions across sovereign partner operations.</p>
         </div>
-        <div class="dashboard-container">
-            <div class="dash-header">
-                <span style="font-weight:bold; font-size:0.85rem; letter-spacing:0.5px; color:#94A3B8;">MANAGED DIGITAL CORE INTERFACE v2.0</span>
-                <div class="dash-status"><div class="dash-pulse"></div>ANALYTICS ONLINE</div>
+        
+        <div class="govtech-grid">
+            <div class="dashboard-container">
+                <div class="dash-header">
+                    <span style="font-weight:bold; font-size:0.85rem; letter-spacing:0.5px; color:#94A3B8;">MODULE 1: GDI ASSESSMENT ENGINE</span>
+                    <div class="dash-status"><div class="dash-pulse"></div>LIVE CALCULATION</div>
+                </div>
+                
+                <div class="score-box">
+                    <h5>AGGREGATED GDI WEIGHTED SCORE</h5>
+                    <div class="score-big" id="gdi-display">50.0</div>
+                    <div class="tier-badge" id="tier-display" style="background-color: var(--yellow); color: var(--navy);">Tier III: Corrective Action Required</div>
+                </div>
+
+                <div class="slider-group">
+                    <label>D1: Structural Autonomy (w: 0.25) <span id="val1">50</span>/100</label>
+                    <input type="range" id="d1" min="0" max="100" value="50" oninput="updateGDI()">
+                </div>
+                <div class="slider-group">
+                    <label>D2: Executive Agency (w: 0.20) <span id="val2">50</span>/100</label>
+                    <input type="range" id="d2" min="0" max="100" value="50" oninput="updateGDI()">
+                </div>
+                <div class="slider-group">
+                    <label>D3: Psychosocial Legacy (w: 0.25) <span id="val3">50</span>/100</label>
+                    <input type="range" id="d3" min="0" max="100" value="50" oninput="updateGDI()">
+                </div>
+                <div class="slider-group">
+                    <label>D4: Protection & Security (w: 0.15) <span id="val4">50</span>/100</label>
+                    <input type="range" id="d4" min="0" max="100" value="50" oninput="updateGDI()">
+                </div>
+                <div class="slider-group">
+                    <label>D5: Communitarian Participation (w: 0.15) <span id="val5">50</span>/100</label>
+                    <input type="range" id="d5" min="0" max="100" value="50" oninput="updateGDI()">
+                </div>
             </div>
-            <div class="dash-body">
-                <div class="dash-widget">
-                    <h5>Real-Time Monitoring Tracking</h5>
-                    <div class="value" style="color:var(--white);">Active</div>
+
+            <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                <div class="dashboard-container" style="flex:1;">
+                    <div class="dash-header">
+                        <span style="font-weight:bold; font-size:0.85rem; color:#94A3B8;">MODULE 2 & 4: REGIONAL VULNERABILITY ANALYTICS</span>
+                    </div>
+                    <div class="map-row">
+                        <span>Oyo State Core Node</span>
+                        <span><span class="status-dot" id="dot-oyo" style="background:var(--yellow);"></span><span id="txt-oyo">At-Risk</span></span>
+                    </div>
+                    <div class="map-row">
+                        <span>Osun State Core Node</span>
+                        <span><span class="status-dot" id="dot-osun" style="background:var(--yellow);"></span><span id="txt-osun">At-Risk</span></span>
+                    </div>
+                    <div class="map-row">
+                        <span>Ogun State Core Node</span>
+                        <span><span class="status-dot" id="dot-ogun" style="background:var(--yellow);"></span><span id="txt-ogun">At-Risk</span></span>
+                    </div>
                 </div>
-                <div class="dash-widget">
-                    <h5>Vulnerability Heat Mapping</h5>
-                    <div class="value" style="color:var(--gold);">Engine Syncing</div>
+
+                <div class="dashboard-container" style="flex:1;">
+                    <div class="dash-header">
+                        <span style="font-weight:bold; font-size:0.85rem; color:#94A3B8;">MODULE 3 & 6: PREDICATIVE AI DECISION POLICY ENGINE</span>
+                    </div>
+                    <div id="alert-zone" style="color:var(--yellow); font-weight:bold; margin-bottom:0.5rem; font-size:0.85rem; text-transform:uppercase;">
+                        ⚠️ Risk Flags: Active Care Deficit Warnings
+                    </div>
+                    <div class="ai-box" id="ai-recommendation">
+                        System Analysing Matrix... Move sliders to generate real-time institutional policy optimization guidelines.
+                    </div>
                 </div>
-                <div class="dash-widget">
-                    <h5>Compliance Benchmarking Matrix</h5>
-                    <div class="value green-txt">94.8%</div>
+                
+                <div class="dashboard-container">
+                    <button class="btn btn-outline" style="width:100%; font-size:0.8rem;" onclick="alert('Securing PDF Generation Framework... Certificate Asset pipeline activated for active ministry users.')">
+                        📥 Download Institutional Tier Verification Certificate (Module 5)
+                    </button>
                 </div>
-            </div>
-            <div style="padding:0 2rem 2.5rem; text-align:left;">
-                <h4 style="font-size:1rem; color:var(--gold); margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.5px;">Predictive Enterprise Subsystems:</h4>
-                <ul style="margin-left:1.2rem; color:#94A3B8; font-size:0.9rem; margin-bottom:1.5rem; list-style-type:circle;">
-                    <li>Automated Social Protection Reporting Modules Active</li>
-                    <li>Institutional Anti-Bullying Baseline Metric Arrays Secured</li>
-                    <li>Sovereign Geriatric Vulnerability Evaluation Vectors Online</li>
-                </ul>
-                <button class="btn btn-outline" style="font-size:0.8rem; width:100%;" onclick="alert('Encryption Shield Engaged: Access requires active multi-factor executive partner token parameters. Instantiating isolated framework interface demo.')">Initialize GovTech System Simulation</button>
             </div>
         </div>
     </main>
@@ -731,6 +841,87 @@
                 element.classList.add('active');
             }
         }
+
+        function updateGDI() {
+            // Retrieve Dimension Metrics From Interface Sliders
+            const d1 = parseFloat(document.getElementById('d1').value);
+            const d2 = parseFloat(document.getElementById('d2').value);
+            const d3 = parseFloat(document.getElementById('d3').value);
+            const d4 = parseFloat(document.getElementById('d4').value);
+            const d5 = parseFloat(document.getElementById('d5').value);
+
+            // Display numerical slider inputs inside label arrays
+            document.getElementById('val1').innerText = d1;
+            document.getElementById('val2').innerText = d2;
+            document.getElementById('val3').innerText = d3;
+            document.getElementById('val4').innerText = d4;
+            document.getElementById('val5').innerText = d5;
+
+            // Execute Linear Aggregation Weighted Architecture from Manuscript
+            const gdi = (0.25 * d1) + (0.20 * d2) + (0.25 * d3) + (0.15 * d4) + (0.15 * d5);
+            document.getElementById('gdi-display').innerText = gdi.toFixed(1);
+
+            // Evaluate Dashboard Classification Engine Tiers
+            let status = "";
+            let color = "";
+            let regionalStatus = "";
+
+            if (gdi >= 90) {
+                status = "Tier I: Elite Dignity-Centered Care";
+                color = "var(--green)";
+                regionalStatus = "Stable";
+            } else if (gdi >= 75) {
+                status = "Tier II: Good Compliance";
+                color = "var(--blue-green)";
+                regionalStatus = "Stable";
+            } else if (gdi >= 50) {
+                status = "Tier III: Corrective Action Required";
+                color = "var(--yellow)";
+                regionalStatus = "At-Risk";
+            } else {
+                status = "Severe Care Deficit";
+                color = "var(--red)";
+                regionalStatus = "Critical";
+            }
+
+            // Update Primary UI Badge Array Indicators
+            const tierBadge = document.getElementById('tier-display');
+            tierBadge.innerText = status;
+            tierBadge.style.backgroundColor = color;
+            tierBadge.style.color = (color === "var(--yellow)" || color === "var(--blue-green)") ? "var(--navy)" : "var(--white)";
+
+            // Update Regional Vulnerability Map Modules Simulator (Oyo, Osun, Ogun metrics sync)
+            document.getElementById('txt-oyo').innerText = regionalStatus;
+            document.getElementById('dot-oyo').style.backgroundColor = color;
+            document.getElementById('txt-osun').innerText = regionalStatus;
+            document.getElementById('dot-osun').style.backgroundColor = color;
+            document.getElementById('txt-ogun').innerText = regionalStatus;
+            document.getElementById('dot-ogun').style.backgroundColor = color;
+
+            // Trigger Module 3 Risk Alerts Engine
+            let flags = [];
+            if (d4 < 50) flags.push("Environmental Security Risk");
+            if (d3 < 50) flags.push("Isolation/Burnout Warning");
+            if (d1 < 50) flags.push("Severe Autonomy Compromise");
+            
+            document.getElementById('alert-zone').innerText = flags.length > 0 ? 
+                "🚨 Risk Flags Active: " + flags.join(" | ") : "💚 System Core Safe: No High-Risk Flags Active";
+            document.getElementById('alert-zone').style.color = flags.length > 0 ? "var(--red)" : "#66BB6A";
+
+            // Trigger Module 6 AI Core Recommendation Logic
+            let aiText = "Strategic Position Optimized. All sovereign metrics currently trading within acceptable international baseline models.";
+            if (d3 < 50) {
+                aiText = "🔴 POLICY ALERT: Psychosocial Legacy measures drop below minimum threshold parameters. Immediate localized intergenerational engagement interventions are highly recommended.";
+            } else if (d4 < 50) {
+                aiText = "🔴 SECURITY WARNING: Protection vector values indicates infrastructure stress. Mandatory environmental safeguarding audits required immediately across local facility grids.";
+            } else if (d1 < 50) {
+                aiText = "⚠️ CRITICAL REVIEW REQUIRED: Structural Autonomy matrix displays systemic confinement metrics. Reform institutional facility scheduling to support basic elder protection guidelines.";
+            }
+            document.getElementById('ai-recommendation').innerText = aiText;
+        }
+
+        // Initialize values on deployment run
+        updateGDI();
     </script>
 </body>
 </html>
