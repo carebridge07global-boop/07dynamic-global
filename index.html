@@ -1,459 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-CareBridge'07 Dynamic Global Ltd
-</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareBridge'07 Dynamic Global Ltd</title>
 <style>
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f4f6f7;
-color:#222;
-}
-
-header{
-background:#0F5F2E;
-padding:70px 20px;
-text-align:center;
-color:white;
-}
-
-header img{
-width:180px;
-margin-bottom:20px;
-}
-
-h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero-text{
-font-size:22px;
-max-width:900px;
-margin:auto;
-line-height:1.6;
-}
-
-.btn{
-display:inline-block;
-margin:10px;
-padding:15px 30px;
-border-radius:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.green{
-background:#ffffff;
-color:#0F5F2E;
-}
-
-.gold{
-background:#D4AF37;
-color:black;
-}
-
-.dark{
-background:#1B1B1B;
-color:white;
-}
-
-section{
-padding:70px 25px;
-max-width:1100px;
-margin:auto;
-}
-
-h2{
-color:#0F5F2E;
-font-size:35px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:
-0 5px 20px rgba(0,0,0,.1);
-text-align:center;
-}
-
-.card h3{
-font-size:40px;
-color:#0F5F2E;
-}
-
-#gdi-dashboard{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:
-0 5px 30px rgba(0,0,0,.1);
-}
-
-input{
-width:100%;
-padding:18px;
-margin-bottom:20px;
-border:1px solid #ccc;
-border-radius:10px;
-font-size:18px;
-}
-
-button{
-padding:18px 35px;
-background:#0F5F2E;
-color:white;
-border:none;
-border-radius:10px;
-font-size:18px;
-cursor:pointer;
-}
-
-button:hover{
-background:#D4AF37;
-color:black;
-}
-
-.result{
-margin-top:30px;
-font-size:28px;
-font-weight:bold;
-}
-
-.founder{
-text-align:center;
-}
-
-.founder img{
-width:220px;
-border-radius:50%;
-border:6px solid #D4AF37;
-margin-bottom:25px;
-}
-
-footer{
-background:#0F5F2E;
-padding:50px;
-text-align:center;
-color:white;
-}
-
-a{
-color:inherit;
-}
-
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f7;color:#222;}
+header{background:#0F5F2E;padding:70px 20px;text-align:center;color:white;}
+header img{width:180px;margin-bottom:20px;}
+h1{font-size:42px;margin-bottom:15px;}
+.hero-text{font-size:22px;max-width:900px;margin:auto;line-height:1.6;}
+.btn{display:inline-block;margin:10px;padding:15px 30px;border-radius:10px;text-decoration:none;font-weight:bold;}
+.green{background:#ffffff;color:#0F5F2E;}
+.gold{background:#D4AF37;color:black;}
+.dark{background:#1B1B1B;color:white;}
+section{padding:70px 25px;max-width:1100px;margin:auto;}
+h2{color:#0F5F2E;font-size:35px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.card{background:white;padding:30px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1);text-align:center;}
+.card h3{font-size:40px;color:#0F5F2E;}
+#gdi-dashboard{background:white;padding:40px;border-radius:20px;box-shadow:0 5px 30px rgba(0,0,0,.1);}
+input{width:100%;padding:18px;margin-bottom:20px;border:1px solid #ccc;border-radius:10px;font-size:18px;}
+button{padding:18px 35px;background:#0F5F2E;color:white;border:none;border-radius:10px;font-size:18px;cursor:pointer;}
+button:hover{background:#D4AF37;color:black;}
+.result{margin-top:30px;font-size:28px;font-weight:bold;}
+.founder{text-align:center;}
+.founder img{width:220px;border-radius:50%;border:6px solid #D4AF37;margin-bottom:25px;}
+footer{background:#0F5F2E;padding:50px;text-align:center;color:white;}
+a{color:inherit;}
+.partnership-section{padding:90px 20px;background:#f8faf9;}
+.partnership-section h2{text-align:center;font-size:42px;color:#0F5F2E;margin-bottom:20px;}
+.partnership-intro{max-width:900px;margin:auto;text-align:center;line-height:1.9;font-size:18px;margin-bottom:60px;}
+.partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-bottom:60px;}
+.partner-card{background:white;padding:35px;border-radius:18px;box-shadow:0 10px 35px rgba(0,0,0,.08);}
+.partner-card h3{color:#0F5F2E;margin-bottom:15px;}
+.inquiry-title{text-align:center;margin-bottom:30px;}
+.partnership-form{max-width:850px;margin:auto;display:flex;flex-direction:column;gap:20px;}
+.partnership-form input,.partnership-form select,.partnership-form textarea{padding:18px;border:1px solid #d8d8d8;border-radius:12px;font-size:16px;}
+.partnership-form button{background:#0F5F2E;color:white;padding:18px;border:none;border-radius:12px;font-size:18px;cursor:pointer;}
+.partnership-form button:hover{background:#146c43;}
+.kdp-section{padding:100px 20px;background:white;}
+.kdp-section h2{text-align:center;font-size:44px;color:#0F5F2E;}
+.book-subtitle{text-align:center;max-width:850px;margin:auto;font-size:20px;margin-bottom:60px;}
+.book-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center;}
+.book-cover{width:100%;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.15);}
+.amazon-btn,.download-btn{display:inline-block;margin-top:20px;margin-right:15px;padding:15px 30px;background:#0F5F2E;color:white;text-decoration:none;border-radius:10px;}
+@media(max-width:900px){.book-grid{grid-template-columns:1fr;}}
 </style>
-
 </head>
-
 <body>
-
 <header>
-
 <img src="logo.png">
-
-<h1>
-Building the Future of Auditable Care Governance
-</h1>
-
+<h1>Building the Future of Auditable Care Governance</h1>
 <p class="hero-text">
-
 Transforming Human Dignity into Measurable, Predictive and Actionable Metrics for Governments, Development Banks, Educational Systems and Humanitarian Institutions.
-
 </p>
-
-<a class="btn green"
-href="#gdi-dashboard">
-
-Explore GDI Dashboard
-
-</a>
-
-<a class="btn gold"
-href="#knowledge">
-
-Executive Summary
-
-</a>
-
-<a class="btn dark"
-href="https://www.amazon.de/dp/B0GXSFP61Z">
-
-Buy The Dignity of Care
-
-</a>
-
+<a class="btn green" href="#gdi-dashboard">Explore GDI Dashboard</a>
+<a class="btn gold" href="#partnerships">Partner With Us</a>
+<a class="btn dark" href="#book">Buy The Dignity of Care</a>
 </header>
-
 <section>
-
-<h2>
-Who We Are
-</h2>
-
+<h2>Who We Are</h2>
 <p>
-
 CareBridge'07 Dynamic Global Ltd is a Nigerian-based Social Impact Technology and Policy Research Company pioneering the science of Care Governance Metrics across Africa and emerging economies.
-
 We design quantitative frameworks that transform complex social protection challenges into measurable governance indicators, enabling governments, multilateral agencies, educational systems and humanitarian organizations to measure human dignity, predict vulnerability risks, improve resource allocation and generate real-time policy intelligence.
-
 </p>
-
 </section>
-
 <section>
-
 <div class="stats">
-
-<div class="card">
-<h3>5</h3>
-<p>Proprietary Metrics</p>
+<div class="card"><h3>5</h3><p>Proprietary Metrics</p></div>
+<div class="card"><h3>100+</h3><p>Pilot Participants Planned</p></div>
+<div class="card"><h3>3</h3><p>Revenue Engines</p></div>
+<div class="card"><h3>24/7</h3><p>Digital Analytics Capability</p></div>
 </div>
-
-<div class="card">
-<h3>100+</h3>
-<p>Pilot Participants Planned</p>
-</div>
-
-<div class="card">
-<h3>3</h3>
-<p>Revenue Engines</p>
-</div>
-
-<div class="card">
-<h3>24/7</h3>
-<p>Digital Analytics Capability</p>
-</div>
-
-</div>
-
 </section>
-
 <section id="gdi-dashboard">
-
-<h2>
-Geriatric Dignity Index Simulator
-</h2>
-
-<input
-type="number"
-id="d1"
-placeholder="Autonomy Score (0-100)">
-
-<input
-type="number"
-id="d2"
-placeholder="Agency Score (0-100)">
-
-<input
-type="number"
-id="d3"
-placeholder="Psychosocial Legacy Score (0-100)">
-
-<input
-type="number"
-id="d4"
-placeholder="Protection Score (0-100)">
-
-<input
-type="number"
-id="d5"
-placeholder="Participation Score (0-100)">
-
-<button onclick="calculateGDI()">
-
-Calculate GDI
-
-</button>
-
-<div class="result"
-id="result">
-
+<h2>Geriatric Dignity Index Simulator</h2>
+<input type="number" id="d1" placeholder="Autonomy Score (0-100)">
+<input type="number" id="d2" placeholder="Agency Score (0-100)">
+<input type="number" id="d3" placeholder="Psychosocial Legacy Score (0-100)">
+<input type="number" id="d4" placeholder="Protection Score (0-100)">
+<input type="number" id="d5" placeholder="Participation Score (0-100)">
+<button onclick="calculateGDI()">Calculate GDI</button>
+<div class="result" id="result"></div>
+</section>
+<section id="partnerships" class="partnership-section">
+<div class="container">
+<h2>Strategic Partnerships</h2>
+<p class="partnership-intro">
+CareBridge'07 Dynamic Global Ltd welcomes partnerships with governments, multilateral agencies, universities, schools, NGOs, development finance institutions, and corporate CSR platforms seeking to institutionalize auditable care governance metrics.
+</p>
+<div class="partner-grid">
+<div class="partner-card">
+<h3>Government Partnerships</h3>
+<p>GDI and DAI deployment, policy advisory, pilot implementation, monitoring and evaluation systems.</p>
 </div>
-
+<div class="partner-card">
+<h3>Development Partners</h3>
+<p>UNICEF, World Bank, AfDB, UN Agencies, foundations and international NGOs seeking measurable social protection frameworks.</p>
+</div>
+<div class="partner-card">
+<h3>Academic Collaborations</h3>
+<p>Joint research, pilot studies, psychometric validation, policy laboratories and longitudinal datasets.</p>
+</div>
+</div>
+<h3 class="inquiry-title">Request a Partnership Discussion</h3>
+<form action="https://formspree.io/f/mbdeboao" method="POST" class="partnership-form">
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="text" name="Institution" placeholder="Organization / Institution" required>
+<input type="text" name="Country" placeholder="Country">
+<input type="email" name="Email" placeholder="Email Address" required>
+<select name="Interest">
+<option>Select Partnership Interest</option>
+<option>GDI Pilot Deployment</option>
+<option>DAI School Safety Framework</option>
+<option>Policy Consultancy</option>
+<option>Research Collaboration</option>
+<option>Training & Certification</option>
+<option>Funding Partnership</option>
+</select>
+<textarea name="Message" rows="7" placeholder="Tell us about your project or institutional needs." required></textarea>
+<button type="submit">Request Partnership Discussion</button>
+</form>
+</div>
 </section>
-
-<section id="knowledge">
-
-<h2>
-Knowledge Hub
-</h2>
-
-<p>
-
-📘 The Dignity of Care
-
-📄 Executive Summary
-
-📑 White Paper
-
-📊 Policy Brief
-
-📈 Pilot Proposal
-
+<section id="book" class="kdp-section">
+<div class="container">
+<h2>The Care Governance Deficit</h2>
+<p class="book-subtitle">
+Transforming Social Policy into Auditable Care Metrics in Low- and Middle-Income Countries
 </p>
-
+<div class="book-grid">
+<div>
+<img src="book-cover.jpg" class="book-cover">
+</div>
+<div>
+<h3>A New Governance Paradigm</h3>
+<p>
+The Care Governance Deficit introduces the world's first integrated Care Governance Architecture (CGA), anchored on the Geriatric Dignity Index (GDI) and the Developmental Agency Index (DAI).
+The framework converts human dignity from abstract rhetoric into measurable, auditable and predictive governance intelligence.
+</p>
+<ul>
+<li>✔ Geriatric Dignity Index (GDI)</li>
+<li>✔ Developmental Agency Index (DAI)</li>
+<li>✔ Predictive Social Protection Analytics</li>
+<li>✔ GovTech/SocialTech Architecture</li>
+<li>✔ Implementation Roadmap for LMICs</li>
+</ul>
+<a href="https://www.amazon.de/dp/B0GXSFP61Z" target="_blank" class="amazon-btn">Buy on Amazon</a>
+<a href="executive-summary.pdf" target="_blank" class="download-btn">Download Executive Summary</a>
+</div>
+</div>
+</div>
 </section>
-
 <section class="founder">
-
 <img src="ayomide.jpg">
-
-<h2>
-Ayomide Idris Sanni, MSW
-</h2>
-
-<h3>
-Founder & Managing Director
-</h3>
-
+<h2>Ayomide Idris Sanni, MSW</h2>
+<h3>Founder & Managing Director</h3>
 <p>
-
 Social Work Professional, Policy Researcher and Social Innovation Entrepreneur specializing in Care Governance, Humanitarian Development and Data-Driven Social Protection Systems.
-
-Author of The Dignity of Care and architect of the Care Governance Architecture (CGA), including the Geriatric Dignity Index (GDI) and Developmental Agency Index (DAI).
-
+<br><br>
+<strong>YALI RLC West Africa Alumnus</strong> | NG-CARES Program Specialist | Author of <em>The Dignity of Care</em> and architect of the Care Governance Architecture (CGA), including the Geriatric Dignity Index (GDI) and Developmental Agency Index (DAI).
 </p>
-
 <p>
-
-LinkedIn:
-
-<a href="https://www.linkedin.com/in/ayomide-sanni-971840103">
-
-View Profile
-
-</a>
-
+LinkedIn: <a href="https://www.linkedin.com/in/ayomide-sanni-971840103">View Profile</a>
 </p>
-
 </section>
-
 <footer>
-
-<h2>
-CAREBRIDGE'07 DYNAMIC GLOBAL LTD
-</h2>
-
-<p>
-
-Bridging Care.
-Restoring Dignity.
-Transforming Lives.
-
-</p>
-
-<p>
-
-Email:
-carebridge07global@gmail.com
-
-</p>
-
-<p>
-
-Nigeria:
-+234 802 850 7370
-
-</p>
-
-<p>
-
-Oman:
-+968 78538712
-
-</p>
-
-<p>
-
-Amazon:
-https://www.amazon.de/dp/B0GXSFP61Z
-
-</p>
-
+<h2>CAREBRIDGE'07 DYNAMIC GLOBAL LTD</h2>
+<p>RC: 8734346</p>
+<p>Bridging Care. Restoring Dignity. Transforming Lives.</p>
+<p>Email: carebridge07global@gmail.com</p>
+<p>Nigeria: +234 802 850 7370</p>
+<p>Oman: +968 78538712</p>
+<p>Amazon: https://www.amazon.de/dp/B0GXSFP61Z</p>
 </footer>
-
 <script>
-
 function calculateGDI(){
-
-let d1=
-parseFloat(document.getElementById('d1').value)||0;
-
-let d2=
-parseFloat(document.getElementById('d2').value)||0;
-
-let d3=
-parseFloat(document.getElementById('d3').value)||0;
-
-let d4=
-parseFloat(document.getElementById('d4').value)||0;
-
-let d5=
-parseFloat(document.getElementById('d5').value)||0;
-
-let gdi=
-
-(0.25*d1)+
-(0.20*d2)+
-(0.25*d3)+
-(0.15*d4)+
-(0.15*d5);
-
-gdi=
-gdi.toFixed(1);
-
+let d1=parseFloat(document.getElementById('d1').value)||0;
+let d2=parseFloat(document.getElementById('d2').value)||0;
+let d3=parseFloat(document.getElementById('d3').value)||0;
+let d4=parseFloat(document.getElementById('d4').value)||0;
+let d5=parseFloat(document.getElementById('d5').value)||0;
+let gdi=(0.25*d1)+(0.20*d2)+(0.25*d3)+(0.15*d4)+(0.15*d5);
+gdi=gdi.toFixed(1);
 let status="";
-
-if(gdi>=80){
-
-status=
-"🟢 Optimal Dignity";
-
+if(gdi>=80){status="🟢 Optimal Dignity";}
+else if(gdi>=50){status="🟡 Structural Risk";}
+else{status="🔴 Critical Vulnerability";}
+document.getElementById("result").innerHTML="Average GDI Score: "+gdi+"<br>"+status;
 }
-
-else if(gdi>=50){
-
-status=
-"🟡 Structural Risk";
-
-}
-
-else{
-
-status=
-"🔴 Critical Vulnerability";
-
-}
-
-document.getElementById("result")
-.innerHTML=
-
-"Average GDI Score: "
-+gdi+
-"<br>"+status;
-
-}
-
 </script>
-
 </body>
-
 </html>
