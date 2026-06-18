@@ -328,3 +328,65 @@ All Rights Reserved.
 </footer>
 
 <script>
+
+function calculateGDI(){
+
+let d1 = Number(document.getElementById("d1").value);
+let d2 = Number(document.getElementById("d2").value);
+let d3 = Number(document.getElementById("d3").value);
+let d4 = Number(document.getElementById("d4").value);
+let d5 = Number(document.getElementById("d5").value);
+
+/* OFFICIAL MANUSCRIPT FORMULA */
+
+let gdi =
+(0.25*d1)+
+(0.20*d2)+
+(0.25*d3)+
+(0.15*d4)+
+(0.15*d5);
+
+document.getElementById("result").innerHTML =
+"Average GDI Score: " + gdi.toFixed(1);
+
+let status =
+document.getElementById("status");
+
+if(gdi>=90){
+
+status.innerHTML =
+"🟢 Tier I Certification (Elite Dignity-Centered Care Status)";
+status.className="status green";
+
+}
+
+else if(gdi>=75){
+
+status.innerHTML =
+"🟡 Tier II Certification (Good Compliance Status)";
+status.className="status yellow";
+
+}
+
+else if(gdi>=50){
+
+status.innerHTML =
+"🟠 Tier III Certification (Conditional Pass)";
+status.className="status yellow";
+
+}
+
+else{
+
+status.innerHTML =
+"🔴 Non-Compliant Status (Immediate Intervention Required)";
+status.className="status red";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
