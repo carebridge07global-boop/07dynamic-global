@@ -1,1625 +1,399 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-D
-<title>
-CareBridge'07 Dynamic Global Ltd
-</title>
-
-<meta name="description"
-content="CareBridge'07 Dynamic Global Ltd | GovTech and Social Innovation Enterprise pioneering auditable care metrics and dignity-centered governance systems.">
-
-<meta name="keywords"
-content="Care Governance, Geriatric Dignity Index, Developmental Agency Index, Social Protection, GovTech Africa, Humanitarian Development, UNICEF, Elder Care, Nigeria, Oman">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:#f7f9f8;
-color:#1e293b;
-}
-
-header{
-background:
-linear-gradient(
-135deg,
-#0b4f2c,
-#0f7a36
-);
-
-color:#fff;
-padding:80px 20px;
-text-align:center;
-}
-
-.hero-logo{
-width:180px;
-max-width:60%;
-height:auto;
-display:block;
-margin:0 auto 25px;
-}
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareBridge’07 Dynamic Global Ltd | GovTech & Social Innovation</title>
+    <!-- Premium Typography Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-   
-   
-   
+    <style>
+        :root {
+            --primary: #0F172A; /* Deep Premium Slate Blue */
+            --accent: #B45309;  /* Warm Amber/Gold Accent */
+            --text-main: #334155;
+            --text-light: #64748B;
+            --bg-light: #F8FAFC;
+            --bg-pure: #FFFFFF;
+            --border: #E2E8F0;
+            --max-width: 1140px;
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-main); background-color: var(--bg-pure); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); font-weight: 600; }
+        p { font-size: 1.05rem; font-weight: 400; }
+        a { text-decoration: none; transition: all 0.2s ease; }
+        ul { list-style: none; }
 
+        .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+        .section-padding { padding: 6rem 0; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 4rem; }
 
-header h1{
-font-size:3rem;
-margin-bottom:15px;
-}
+        /* Global Premium Button */
+        .btn-premium {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--bg-pure);
+            padding: 0.85rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+        }
+        .btn-premium:hover { background-color: transparent; color: var(--primary); }
 
-header h2{
-font-size:1.3rem;
-font-weight:400;
-margin-bottom:20px;
-}
+        /* 1. Header Navigation */
+        header { background-color: var(--bg-pure); border-bottom: 1px solid var(--border); padding: 1.25rem 0; sticky; top: 0; z-index: 100; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-area { display: flex; align-items: center; gap: 1rem; }
+        .logo-area img { height: 50px; width: auto; object-fit: contain; }
+        .logo-text h1 { font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: 1px; }
+        .logo-text span { font-size: 0.75rem; color: var(--text-light); display: block; margin-top: -2px; }
 
-.rc{
-display:inline-block;
-padding:10px 20px;
-background:#d4af37;
-border-radius:40px;
-font-weight:600;
-margin-top:20px;
-}
+        /* 2. Hero Section */
+        .hero { background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); color: var(--bg-pure); padding: 8rem 0; text-align: center; }
+        .hero h2 { font-size: 3.5rem; color: var(--bg-pure); margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.35rem; font-family: 'Playfair Display', serif; font-style: italic; color: #94A3B8; margin-bottom: 3rem; font-weight: 300; }
+        .hero-meta { display: inline-flex; gap: 2rem; border-top: 1px solid #334155; padding-top: 2rem; font-size: 0.9rem; color: #cbd5e1; letter-spacing: 0.5px; }
 
-section{
-padding:80px 8%;
-}
+        /* 3. Narrative Section (Why We Exist) */
+        .narrative { background-color: var(--bg-light); text-align: center; }
+        .narrative-box { max-width: 800px; margin: 0 auto; }
+        .narrative p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        .blockquote-premium { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: var(--accent); margin-top: 3rem; padding-top: 2rem; border-top: 1px dashed var(--border); line-height: 1.4; }
 
-.title{
-font-size:2rem;
-color:#0b4f2c;
-margin-bottom:30px;
-text-align:center;
-}
+        /* Section Headers */
+        .section-header { margin-bottom: 4rem; }
+        .section-header span { text-transform: uppercase; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; color: var(--accent); display: block; margin-bottom: 0.5rem; }
+        .section-header h2 { font-size: 2.25rem; }
 
-.grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
+        /* Cards Style */
+        .premium-card { background: var(--bg-pure); border: 1px solid var(--border); padding: 2.5rem; border-radius: 6px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .premium-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(15,23,42,0.06); }
+        .premium-card h3 { font-size: 1.4rem; margin-bottom: 1rem; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--primary); }
+        .premium-card p { font-size: 1rem; color: var(--text-light); }
 
-.card{
-  /* Founder Profile */
-#founder{ padding:80px 8%; background:#fff; }
-.founder-wrap{ max-width:1000px; margin:0 auto; }
-.founder-wrap h2{ text-align:center; font-size:2.3rem; color:#0b4f2c; margin-bottom:15px; font-weight:800; }
-.founder-wrap h3{ text-align:center; font-size:1.3rem; color:#333; margin-bottom:30px; font-weight:600; }
-.founder-wrap p{ font-size:1rem; line-height:1.8; color:#444; margin-bottom:18px; }
-.founder-wrap ul{ margin:15px 0 25px 20px; line-height:1.9; color:#444; }
-.founder-wrap strong{ color:#0b4f2c; }
+        /* 4. Founder Profile Layout (Headshot Exactly at the Right Place) */
+        .founder-section { background-color: var(--bg-pure); }
+        .founder-flex { display: flex; flex-wrap: wrap; gap: 4rem; align-items: flex-start; }
+        .founder-text-column { flex: 1; min-width: 300px; }
+        .founder-image-column { flex: 0 0 320px; text-align: center; position: sticky; top: 100px; }
+        .founder-image-wrapper { background-color: var(--bg-light); border: 1px solid var(--border); padding: 1rem; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.02); }
+        .founder-image-wrapper img { width: 100%; height: auto; border-radius: 4px; filter: grayscale(15%); display: block; margin-bottom: 1.5rem; }
+        .founder-text-column h2 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+        .founder-title { font-size: 1.1rem; font-weight: 500; color: var(--accent); margin-bottom: 2rem; }
+        .founder-bio p { margin-bottom: 1.25rem; }
+        .founder-lists { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media(max-width: 768px) { .founder-lists { grid-template-columns: 1fr; } .founder-image-column { position: static; order: -1; width: 100%; max-width: 320px; margin: 0 auto; } }
+        .founder-lists h4 { font-family: 'Inter', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 0.75rem; }
+        .founder-lists ul li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-light); }
+        .founder-lists ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
+        .social-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.95rem; font-weight: 500; color: #0077B5; }
 
-/* Leadership Cards Fix */
-.card h3{ font-size:1.05rem; margin:0 0 8px; color:#0b4f2c; line-height:1.3; font-weight:700; }
-.card p{ font-size:0.9rem; line-height:1.6; color:#444; margin:0; }
-#leadership{ padding:80px 8%; background:#f7f9f8; }
-background:#fff;
-padding:35px;
-border-radius:25px;
-box-shadow:
-0 10px 40px rgba(0,0,0,.08);
-}
+        /* 5. Team Section */
+        .team-section { background-color: var(--bg-light); }
+        .team-card { background: var(--bg-pure); border: 1px solid var(--border); padding: 2rem; border-radius: 4px; }
+        .team-card h3 { font-size: 1.2rem; font-family: 'Inter', sans-serif; font-weight: 600; margin-bottom: 0.25rem; }
+        .team-role { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); font-weight: 500; margin-bottom: 1rem; }
+        .team-card p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; }
 
-.card h3{
-color:#0b4f2c;
-margin-bottom:15px;
-}
-.card h3{ 
-  font-size:1.05rem; 
-  line-height:1.3; 
-  font-weight:700;
-}
-.card p{ 
-  font-size:0.9rem; 
-  line-height:1.6; 
-  color:#444; 
-  margin:0;
-}
-.founder{
-text-align:center;
-}
+        /* 6. Product Dashboards Center */
+        .products-section { background-color: var(--bg-pure); }
+        .dashboard-btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--primary); padding: 0.6rem 1.2rem; font-size: 0.85rem; font-weight: 500; border-radius: 4px; }
+        .btn-secondary:hover { border-color: var(--primary); }
 
-.founder img{
-width:250px;
-height:250px;
-object-fit:cover;
-border-radius:50%;
-border:8px solid #d4af37;
-margin-bottom:30px;
-}
+        /* 7. Download / Validation center */
+        .vault-section { background-color: var(--primary); color: var(--bg-pure); }
+        .vault-section .section-header h2 { color: var(--bg-pure); }
+        .vault-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .vault-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 6px; text-align: center; }
+        .vault-card h3 { color: var(--bg-pure); font-family: 'Inter', sans-serif; font-size: 1.15rem; margin-bottom: 1.5rem; }
+        .btn-vault { display: block; background: rgba(255,255,255,0.1); color: var(--bg-pure); padding: 0.75rem; border-radius: 4px; font-size: 0.9rem; transition: background 0.2s; }
+        .btn-vault:hover { background: var(--accent); }
 
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:#0b4f2c;
-color:white;
-text-decoration:none;
-border-radius:10px;
-margin-top:20px;
-}
-
-.downloads a{
-display:block;
-margin:15px auto;
-max-width:400px;
-text-align:center;
-}
-
-.metric{
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:
-0 10px 40px rgba(0,0,0,.08);
-}
-
-.metric input{
-width:100%;
-padding:15px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:10px;
-}
-
-.metric button{
-padding:15px 30px;
-background:#0b4f2c;
-color:#fff;
-border:none;
-border-radius:10px;
-cursor:pointer;
-}
-
-.result{
-font-size:2rem;
-font-weight:700;
-margin-top:20px;
-color:#0b4f2c;
-}
-
-form{
-max-width:800px;
-margin:auto;
-}
-
-form input,
-form textarea,
-form select{
-
-width:100%;
-padding:15px;
-margin-bottom:20px;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-form button{
-padding:15px 30px;
-background:#0b4f2c;
-color:#fff;
-border:none;
-border-radius:10px;
-font-size:18px;
-}
-
-footer{
-background:#0b4f2c;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
-
-</style>
-
+        /* 8. Footer */
+        footer { background-color: #0B0F19; color: #94A3B8; padding: 5rem 0 3rem; font-size: 0.95rem; border-top: 4px solid var(--accent); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+        @media(max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+        .footer-brand h3 { color: var(--bg-pure); font-size: 1.35rem; margin-bottom: 1rem; }
+        .footer-col h4 { color: var(--bg-pure); font-family: 'Inter', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.25rem; }
+        .footer-col p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .footer-bottom { border-top: 1px solid #1E293B; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: #64748B; }
+    </style>
 </head>
-
-   <body>
-
-<header>
-   <img src="official-logo.png"
-       alt="CareBridge'07 Dynamic Global Ltd Official Logo"        class="hero-logo">
-
-   <h1 style="margin:0; font-size:2.5rem; font-weight:800;">
-   CAREBRIDGE'07 DYNAMIC GLOBAL LTD
-  </h1>
-
-  <div class="rc">
-  RC:8734346
-  </div>
- 
-   <p style="font-size:1.3rem; margin:10px 0 0 0; font-weight:500;">
-  Bridging Care.<br>
-   Restoring Dignity.<br>
-   Transforming Lives.
-   </p>
- </header>
-       <section id="about" style="padding:60px 20px;background:#fff;">
-<div class="container">
-
-<h2 class="title">About Us</h2>
-
-<p style="
-font-size:1.1rem;
-line-height:1.8;
-max-width:900px;
-margin:auto;
-text-align:center;
-color:#444;
-">
-
-CareBridge'07 Dynamic Global Ltd is a registered Nigerian GovTech and Social Innovation Enterprise dedicated to building auditable care metrics, digital governance tools, and evidence-based social protection systems for low- and middle-income countries.
-
-We develop measurable frameworks that transform human dignity, care delivery, and developmental outcomes into actionable governance intelligence for governments, universities, development partners, NGOs, and community-based organizations.
-
-</p>
-
-<div style="
-margin-top:30px;
-text-align:center;
-font-weight:700;
-font-size:1rem;
-color:#0b4f2c;
-">
-
-Registered in Nigeria<br>
-CareBridge'07 Dynamic Global Ltd<br>
-RC:8734346
-
-</div>
-
-</div>
-</section>
- <section id="founder">
-  <div class="founder-wrap">
-    <h2>Founder & Executive Director</h2>
-    <h3>Ayomide Idris Sanni</h3>
-    <p><strong>Founder & Executive Director, CareBridge'07 Dynamic Global Ltd (RC: 8734346)</strong></p>
-    
-    <p>Ayomide Idris Sanni is a social policy innovator, public administration researcher, and founder of CareBridge'07 Dynamic Global Ltd (Corporate Affairs Commission Registration No. RC: 8734346), a premier Nigerian social enterprise and consulting firm dedicated to advancing institutional facilitation, capacity building, and humanitarian development frameworks.</p>
-    
-    <p>His work sits at the intersection of social protection, governance analytics, and human-centred technology. He specializes in designing and deploying innovative, mathematically grounded metrics that bridge the critical gap between macro-level social policy design and measurable, localized human outcomes, particularly within low- and middle-income countries (LMICs).</p>
-    
-    <p>Ayomide is the author of <em>The Dignity of Care: Rethinking How We Support the Elderly in a Changing World</em>, and the principal architect of the emerging Care Governance Architecture (CGA)—an integrated ecosystem of auditable care metrics designed to transform human dignity from a moral aspiration into an evidence-based governance asset.</p>
-    
-    <p>He is also the creator of:</p>
-    <ul>
-      <li><strong>The Geriatric Dignity Index (GDI):</strong> A multidimensional framework for measuring dignity, autonomy, and institutional accountability in older adult care systems.</li>
-      <li><strong>The Developmental Agency Index (DAI):</strong> A quantitative safeguarding and anti-bullying framework for educational institutions and child protection systems.</li>
-    </ul>
-    
-    <p>Under his leadership, CareBridge'07 is pioneering the application of GovTech and SocialTech solutions to social protection through dashboards, telemetry systems, predictive analytics, and real-time policy intelligence platforms.</p>
-    
-    <p><strong>Current Research and Professional Interests</strong></p>
-    <ul>
-      <li>Lifecycle Care Governance Architecture (CGA)</li>
-      <li>Macro-Gerontology and Child Safeguarding Policy</li>
-      <li>Sub-Saharan African and Middle Eastern Social Protection Systems</li>
-      <li>Data-Driven Welfare Policy and Development Finance</li>
-      <li>Public Human Services Administration and Telemetry Auditing</li>
-      <li>Community Resilience and Vulnerability Metrics</li>
-      <li>Digital Governance, GovTech and Social Innovation Systems</li>
-    </ul>
-    
-    <p><strong>Vision</strong><br>
-    To build globally relevant, evidence-based care governance systems that enable governments, development institutions, and communities to measure, finance, and defend human dignity through auditable metrics, predictive analytics, and accountable social policy frameworks.</p>
-  </div>
-</section>
-<section id="leadership">
-  <h2 class="title">Leadership & Advisory Team</h2>
-  <div class="grid">
-    
-    <div class="card">
-      <h3>Sotubo Olurotimi Olumide, MSW, RSW</h3>
-      <p>Senior Executive, Care Governance & Public Policy. Former Permanent Secretary, Ogun State Civil Service and British Registered Social Worker with more than three decades of experience in social welfare administration, institutional rehabilitation, and public policy governance.</p>
-    </div>
-    
-    <div class="card">
-      <h3>Waheed Bamidele Balogun, FCILRM</h3>
-      <p>Head of Monitoring, Compliance & Operational Risk. Seasoned risk management and corporate governance professional with over twenty years of experience in internal controls, operational risk monitoring, compliance systems, and institutional accountability frameworks.</p>
-    </div>
-    
-    <div class="card">
-      <h3>Bamidele Adetoye, M.Sc.</h3>
-      <p>Lead Consultant, Youth Development & Residential Care Services. International Human Services Specialist and Psychology professional with extensive experience in residential care systems, behavioural interventions, youth development programming, and community-based social services across Africa and North America.</p>
-    </div>
-    
-    <div class="card">
-      <h3>Dr. Aderemi Oluremi</h3>
-      <p>Senior Research Fellow & Consultant, Social Welfare & Early Childhood Systems. Academic and researcher specializing in social welfare, sociology, early childhood systems, and evidence-based community development frameworks.</p>
-    </div>
-    
-    <div class="card">
-      <h3>Kafayat Opeyemi</h3>
-      <p>Programme Manager, Public Health & Community Extension Services. Public health practitioner with expertise in community mobilisation, preventive health frameworks, maternal and child health interventions, and scalable community health initiatives.</p>
-    </div>
-    
-    <div class="card">
-      <h3>Abdul Ruqeeb Ifedayo</h3>
-      <p>Technical Lead, GovTech & Digital Infrastructure. Computer Science professional leading digital architecture, care governance dashboards, analytics systems, and secure data-driven social intelligence platforms for low- and middle-income countries.</p>
-    </div>
-    
-  </div>
-</section>
-  
-    
-      
-    
-    
-    
-    
-    
-    
-    
-  
-</section>
-  
-
-
-
-
-  
-  
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="why-exist">
-
-<h2 class="title">
-Why We Exist
-</h2>
-
-<p>
-Every year, millions of young professionals migrate to global economic centres in search of opportunities. Behind these journeys are ageing parents, children, caregivers and communities navigating new realities of care and support.
-</p>
-
-<p>
-Traditional family systems that once protected the vulnerable are under strain. Yet development conversations often focus on economic indicators while overlooking the human relationships that sustain societies.
-</p>
-
-<p>
-CareBridge'07 Dynamic Global Ltd was founded to address this invisible crisis by placing human dignity, care systems, social protection and evidence-driven innovation at the centre of development thinking.
-</p>
-
-<div class="quote">
-Development is not only about economic growth. It is also about who is cared for, who is left behind, and how societies protect human dignity across generations.
-</div>
-
-</section>
-
-<section>
-<h2 class="title">
-Our Strategic Pillars
-</h2>
-
-
-<div class="grid">
-
-<div class="card">
-<h3>Care Facilitation</h3>
-
-<p>
-Community-based care systems,
-caregiver support,
-elder protection,
-dignity-centered interventions.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Policy Consultancy
-</h3>
-
-<p>
-Care governance,
-social protection,
-monitoring and evaluation,
-safeguarding audits,
-public policy design.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Humanitarian Development
-</h3>
-
-<p>
-Evidence-based social innovation,
-vulnerability mapping,
-predictive policy intelligence,
-GovTech solutions.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="founder">
-
-<h2 class="title">
-Founder & Managing Director
-</h2>
-
-<img src="ayomide.jpg">
-
-<h3>
-Ayomide Idris Sanni, MSW
-</h3>
-
-<p>
-
-Social Work Professional,
-Policy Researcher and GovTech Entrepreneur.
-
-Developer of:
-
-• Geriatric Dignity Index (GDI)
-
-• Developmental Agency Index (DAI)
-
-• Care Governance Architecture (CGA)
-
-Author of:
-
-The Dignity of Care
-
-The Care Governance Deficit
-
-</p>
-
-<a
-href="https://www.linkedin.com/in/ayomide-sanni-971840103"
-class="btn">
-
-LinkedIn Profile
-
-</a>
-
-</section>
-
-<section>
-
-<h2 class="title">
-Digital Products
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>
-The Dignity of Care
-</h3>
-
-<p>
-Amazon KDP Publication
-</p>
-
-<a
-href="https://www.amazon.de/dp/B0GXSFP61Z"
-class="btn">
-
-Buy on Amazon
-
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>
-The Care Governance Deficit
-</h3>
-
-<p>
-Coming Soon
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-GDI Dashboard License
-</h3>
-
-<p>
-Institutional Subscription
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">
-Download Centre
-</h2>
-
-<div class="downloads">
-
-<a
-href="executive-summary.pdf"
-class="btn">
-
-Executive Summary
-
-</a>
-
-<a
-href="white-paper.pdf"
-class="btn">
-
-White Paper
-
-</a>
-
-<a
-href="partnership-prospectus.pdf"
-class="btn">
-
-Partnership Prospectus
-
-</a>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="title">
-Geriatric Dignity Index Calculator
-</h2>
-
-<div class="metric">
-
-<input id="d1" placeholder="Autonomy">
-
-<input id="d2" placeholder="Agency">
-
-<input id="d3" placeholder="Psychosocial Legacy">
-
-<input id="d4" placeholder="Security">
-
-<input id="d5" placeholder="Participation">
-
-<button onclick="calculateGDI()">
-
-Calculate GDI
-
-</button>
-
-<div
-class="result"
-id="result">
-
-0.00
-
-</div>
-
-</div>
-
-</section>
-  
-<!-- ===========================
-CAREBRIDGE'07 PROFESSIONAL SERVICES
-============================ -->
-<section id="services" style="padding:60px 20px;background:#f7f9f8;">
-  <div style="max-width:1200px;margin:auto;text-align:center;">
-    <h2 style="font-size:2.5rem;color:#0f5e2d;margin-bottom:15px;font-weight:700;">
-      Professional Services   
-
-</h2>
-
-<div class="grid">
-
-
-
-</div>
-
-</section>
-    </h2>
-    <p style="font-size:1.1rem;max-width:800px;margin:0 auto 40px;color:#444;line-height:1.6;">
-      CareBridge'07 Dynamic Global Ltd provides evidence-based care governance solutions that transform social protection systems into measurable, accountable frameworks for governments and development partners.
-    </p>
-    
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;text-align:left;">
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">1. Policy Advisory</h3>
-        <p style="color:#555;font-size:0.95rem;">Strategic guidance for ministries and agencies on ageing policy, social protection reform, and dignity-centered governance frameworks.</p>
-      </div>
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">2. Social Protection Metrics Design</h3>
-        <p style="color:#555;font-size:0.95rem;">Custom GDI, DAI, DII, CRI, CPI indicator development for national M&E systems and World Bank projects.</p>
-      </div>
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">3. Monitoring & Evaluation</h3>
-        <p style="color:#555;font-size:0.95rem;">Third-party M&E for UNICEF, NGOs, and government programs. Real-time data collection and impact verification.</p>
-      </div>
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">4. Dashboard Development</h3>
-        <p style="color:#555;font-size:0.95rem;">GovTech dashboards for vulnerability mapping, care quality tracking, and predictive policy intelligence.</p>
-      </div>
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">5. Capacity Building & Certification</h3>
-        <p style="color:#555;font-size:0.95rem;">Training for social workers, caregivers, and officials. GDI/DAI auditor certification programs.</p>
-      </div>
-      
-      <div style="background:white;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
-        <h3 style="color:#0f5e2d;font-size:1.3rem;margin-bottom:10px;">6. Safeguard Audits & Deployment</h3>
-        <p style="color:#555;font-size:0.95rem;">Full GDI/DAI index deployment in schools, care homes, and communities. Child safeguarding audits.</p>
-      </div>
-      
-    </div>
-  </div>
-</section>
-<div style="max-width:1200px;margin:auto;text-align:center;">
-
-<h2 style="
-font-size:3rem;
-color:#0f5e2d;
-margin-bottom:20px;
-font-weight:800;">
-Professional Services
-</h2>
-
-<p style="
-font-size:1.1rem;
-max-width:900px;
-margin:auto;
-line-height:1.8;
-color:#555;">
-CareBridge'07 Dynamic Global Ltd provides evidence-based care governance solutions that transform social protection systems into measurable, auditable, and technology-enabled accountability frameworks for governments, development partners, educational institutions, and humanitarian organizations.
-</p>
-
-<br><br>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;">
-
-<!-- CARD 1 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-📑 Policy Advisory
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Design of social protection frameworks, ageing policy reforms, child safeguarding systems, and dignity-centred governance models for ministries, municipalities, and international development agencies.
-</p>
-
-</div>
-
-<!-- CARD 2 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-📊 Social Protection Metrics Design
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Development of measurable governance indices including the Geriatric Dignity Index (GDI), Developmental Agency Index (DAI), Caregiver Resilience Index (CRI), and other auditable care metrics.
-</p>
-
-</div>
-
-<!-- CARD 3 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-📈 Monitoring & Evaluation
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Impact evaluations, baseline studies, beneficiary assessments, vulnerability mapping, programme audits, and evidence generation for donor-funded interventions.
-</p>
-
-</div>
-
-<!-- CARD 4 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-💻 Dashboard Development
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Interactive policy dashboards, offline mobile data collection systems, predictive analytics engines, and real-time decision-support platforms for institutions and governments.
-</p>
-
-</div>
-
-<!-- CARD 5 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-🎓 Capacity Building & Certification
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Training and certification programmes for caregivers, social workers, community health officers, schools, NGOs, and government personnel on measurable care governance systems.
-</p>
-
-</div>
-
-<!-- CARD 6 -->
-
-<div style="
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);">
-
-<h3 style="color:#0f5e2d;">
-🛡️ Safeguard Audits & Index Deployment
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-Institutional safeguarding assessments, GDI deployment, DAI implementation, elder protection systems, anti-bullying audits, and dignity risk reporting frameworks.
-</p>
-
-</div>
-
-</div>
-
-<br><br>
-
-<a href="#contact"
-style="
-background:#0f5e2d;
-color:white;
-padding:18px 40px;
-border-radius:40px;
-text-decoration:none;
-font-size:1rem;
-font-weight:700;
-display:inline-block;">
-Request Institutional Partnership
-</a>
-
-</div>
-
-</section>
-<section>
-
-<h2 class="title">
-Partnership Portal
-</h2>
-
-<form
-action="https://formspree.io/f/mbdeboao"
-method="POST">
-
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="text"
-name="organization"
-placeholder="Organization">
-
-<select
-name="partnership">
-
-<option>
-Government Partnership
-</option>
-
-<option>
-UNICEF Collaboration
-</option>
-
-<option>
-Research Partnership
-</option>
-
-<option>
-Investment Opportunity
-</option>
-
-</select>
-
-<textarea
-name="message"
-placeholder="Your Message"
-rows="6">
-
-</textarea>
-
-<button>
-
-Submit Partnership Request
-
-</button>
-
-</form>
-
-</section>
-<style>
-
-.section-title{
-text-align:center;
-font-size:2.5rem;
-font-weight:800;
-color:#0b4f2c;
-margin-bottom:50px;
-}
-
-.dashboard-grid,
-.focus-grid,
-.leadership-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.card-box{
-background:#ffffff;
-padding:30px;
-border-radius:22px;
-box-shadow:
-0 8px 30px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card-box:hover{
-transform:translateY(-6px);
-}
-
-.card-box h3{
-color:#0b4f2c;
-margin-bottom:20px;
-font-size:1.3rem;
-}
-
-.card-box p{
-line-height:1.8;
-color:#444;
-}
-
-.dashboard-button{
-display:inline-block;
-margin-top:20px;
-padding:12px 22px;
-background:#0b4f2c;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:600;
-}
-
-.dashboard-button:hover{
-background:#087336;
-}
-
-.metrics{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:30px;
-margin-top:50px;
-}
-
-.metric-box{
-background:white;
-padding:30px;
-border-radius:20px;
-width:220px;
-text-align:center;
-box-shadow:
-0 8px 30px rgba(0,0,0,.08);
-}
-
-.metric-box h1{
-font-size:3rem;
-color:#0b4f2c;
-}
-
-.metric-box p{
-margin-top:10px;
-font-weight:600;
-}
-
-.validation-box{
-background:#0b4f2c;
-padding:50px;
-border-radius:25px;
-text-align:center;
-color:white;
-margin-top:60px;
-}
-
-.validation-box h2{
-font-size:2rem;
-margin-bottom:20px;
-}
-
-.validation-box p{
-line-height:1.9;
-font-size:1.1rem;
-}
-
-</style>
-
-<section style="padding:80px 8%;background:#f7f9f8;">
-
-<h2 class="section-title">
-Institutional Focus Areas
-</h2>
-
-<div class="focus-grid">
-
-<div class="card-box">
-<h3>Care Governance Metrics</h3>
-<p>
-Evidence-based indicators for measuring dignity, care outcomes and institutional accountability.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Geriatric Dignity Index (GDI)</h3>
-<p>
-Multidimensional framework translating dignity into measurable and auditable governance outcomes.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Developmental Agency Index (DAI)</h3>
-<p>
-Metrics for evaluating child development, agency, participation and protection systems.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Monitoring & Evaluation</h3>
-<p>
-Real-time dashboards, policy intelligence and social impact measurement systems.
-</p>
-</div>
-
-<div class="card-box">
-<h3>GovTech Solutions</h3>
-<p>
-Digital infrastructure supporting social protection systems and care governance transformation.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Policy Advisory Services</h3>
-<p>
-Institutional strengthening, care metrics design and governance reform support.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section style="padding:80px 8%;background:white;">
-
-<h2 class="section-title">
-Leadership & Advisory Team
-</h2>
-
-<div class="leadership-grid">
-
-<div class="card-box">
-<h3>Sotubo Olurotimi Olumide, MSW, RSW</h3>
-<p>
-Senior Executive, Care Governance & Public Policy.
-Former Permanent Secretary, Ogun State Civil Service and British Registered Social Worker.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Waheed Bamidele Balogun, FCILRM</h3>
-<p>
-Head of Monitoring, Compliance & Operational Risk.
-Specialist in governance, risk management and institutional accountability systems.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Bamidele Adetoye, M.Sc.</h3>
-<p>
-Lead Consultant, Youth Development & Residential Care Services.
-International Human Services Specialist and Psychology professional.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Dr Aderemi Oluremi</h3>
-<p>
-Senior Research Fellow and Consultant in Social Welfare and Early Childhood Systems.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Kafayat Opeyemi</h3>
-<p>
-Programme Manager, Public Health and Community Extension Services.
-</p>
-</div>
-
-<div class="card-box">
-<h3>Abdul Ruqeeb Ifedayo</h3>
-<p>
-Technical Lead, GovTech and Digital Infrastructure.
-Responsible for dashboards, analytics and digital governance systems.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section style="padding:80px 8%;background:#f7f9f8;">
-
-<h2 class="section-title">
-Care Governance Dashboards
-</h2>
-
-<div class="dashboard-grid">
-
-<div class="card-box">
-<h3>GDI Dashboard</h3>
-
-<p>
-Assessment engine for Autonomy, Agency, Psychosocial Legacy, Security and Participation.
-</p>
-
-<a href="gdi-dashboard.html"
-class="dashboard-button">
-
-Launch Dashboard
-
-</a>
-
-</div>
-
-<div class="card-box">
-
-<h3>DAI Dashboard</h3>
-
-<p>
-Developmental Agency Index dashboard for child and youth development measurement.
-</p>
-
-<a href="dai-dashboard.html"
-class="dashboard-button">
-
-Launch Dashboard
-
-</a>
-
-</div>
-
-<div class="card-box">
-
-<h3>Analytics Centre</h3>
-
-<p>
-Institutional intelligence platform generating reports, charts and policy metrics.
-</p>
-
-<a href="analytics.html"
-class="dashboard-button">
-
-Open Analytics
-
-</a>
-
-</div>
-
-</div>
-
-<div class="metrics">
-
-<div class="metric-box">
-<h1 id="m1">0</h1>
-<p>Assessments</p>
-</div>
-
-<div class="metric-box">
-<h1 id="m2">0</h1>
-<p>Institutions</p>
-</div>
-
-<div class="metric-box">
-<h1 id="m3">0</h1>
-<p>Countries</p>
-</div>
-
-</div>
-
-</section>
-
-<section style="padding:80px 8%;background:white;">
-
-<div class="validation-box">
-
-<h2>
-Academic & Institutional Validation
-</h2>
-
-<p>
-
-CareBridge'07 Dynamic Global Ltd welcomes partnerships with Universities, Ministries, Development Partners, NGOs and Research Institutions for validation and deployment of the Geriatric Dignity Index (GDI), Developmental Agency Index (DAI) and broader Care Governance Architecture.
-
-</p>
-
-</div>
-
-</section>
-
-<script>
-
-document.getElementById("m1").innerHTML="0";
-document.getElementById("m2").innerHTML="0";
-document.getElementById("m3").innerHTML="1";
-
-section id="dashboards" style="padding:80px 8%;background:#f7f9f8;">
-
-<h2 style="
-text-align:center;
-font-size:2.7rem;
-color:#0b4f2c;
-margin-bottom:20px;
-font-weight:800;
-">
-
-Care Governance Dashboards
-
-</h2>
-
-<p style="
-text-align:center;
-max-width:900px;
-margin:auto;
-line-height:1.8;
-font-size:1.1rem;
-color:#555;
-">
-
-Real-time governance intelligence for governments, development partners, NGOs, universities and social protection institutions.
-
-</p>
-
-<div style="
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-margin-top:60px;
-">
-
-<div style="
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:
-0 12px 35px rgba(0,0,0,.08);
-">
-
-<h3 style="
-color:#0b4f2c;
-font-size:1.5rem;
-margin-bottom:20px;
-">
-
-Geriatric Dignity Index Dashboard
-
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-
-Monitor:
-
-✔ Autonomy
-
-✔ Agency
-
-✔ Psychosocial Legacy
-
-✔ Security
-
-✔ Participation
-
-✔ Institutional Performance
-
-✔ Governance Scores
-
-</p>
-
-<button
-onclick="showGDI()"
-style="
-margin-top:25px;
-padding:15px 30px;
-background:#0b4f2c;
-color:white;
-border:none;
-border-radius:12px;
-font-size:1rem;
-font-weight:600;
-cursor:pointer;
-">
-
-Open Dashboard
-
-</button>
-
-</div>
-
-<div style="
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:
-0 12px 35px rgba(0,0,0,.08);
-">
-
-<h3 style="
-color:#0b4f2c;
-font-size:1.5rem;
-margin-bottom:20px;
-">
-
-Developmental Agency Index Dashboard
-
-</h3>
-
-<p style="line-height:1.8;color:#555;">
-
-Monitor:
-
-✔ Child Participation
-
-✔ Education Access
-
-✔ Protection Systems
-
-✔ Family Environment
-
-✔ Development Outcomes
-
-✔ Agency Scores
-
-✔ Policy Performance
-
-</p>
-
-<button
-onclick="showDAI()"
-style="
-margin-top:25px;
-padding:15px 30px;
-background:#0b4f2c;
-color:white;
-border:none;
-border-radius:12px;
-font-size:1rem;
-font-weight:600;
-cursor:pointer;
-">
-
-Open Dashboard
-
-</button>
-
-</div>
-
-</div>
-
-<div id="dashboardArea"
-style="
-margin-top:60px;
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:
-0 12px 35px rgba(0,0,0,.08);
-display:none;
-">
-
-<h2 id="dashboardTitle"
-style="
-color:#0b4f2c;
-margin-bottom:40px;
-">
-</h2>
-
-<div style="
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-">
-
-<div style="
-padding:30px;
-background:#f7f9f8;
-border-radius:20px;
-text-align:center;
-">
-
-<h1 id="m1"
-style="
-font-size:3rem;
-color:#0b4f2c;
-">
-0
-</h1>
-
-<p>Assessments</p>
-
-</div>
-
-<div style="
-padding:30px;
-background:#f7f9f8;
-border-radius:20px;
-text-align:center;
-">
-
-<h1 id="m2"
-style="
-font-size:3rem;
-color:#0b4f2c;
-">
-0
-</h1>
-
-<p>Institutions</p>
-
-</div>
-
-<div style="
-padding:30px;
-background:#f7f9f8;
-border-radius:20px;
-text-align:center;
-">
-
-<h1 id="m3"
-style="
-font-size:3rem;
-color:#0b4f2c;
-">
-0
-</h1>
-
-<p>Countries</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<script>
-
-function showGDI(){
-
-document.getElementById(
-"dashboardArea"
-).style.display="block";
-
-document.getElementById(
-"dashboardTitle"
-).innerHTML=
-"Geriatric Dignity Index Dashboard";
-
-document.getElementById(
-"m1"
-).innerHTML=0;
-
-document.getElementById(
-"m2"
-).innerHTML=0;
-
-document.getElementById(
-"m3"
-).innerHTML=1;
-
-}
-
-function showDAI(){
-
-document.getElementById(
-"dashboardArea"
-).style.display="block";
-
-document.getElementById(
-"dashboardTitle"
-).innerHTML=
-"Developmental Agency Index Dashboard";
-
-document.getElementById(
-"m1"
-).innerHTML=0;
-
-document.getElementById(
-"m2"
-).innerHTML=0;
-
-document.getElementById(
-"m3"
-).innerHTML=1;
-
-}
-
-</script>
-<footer>
-
-<h3>
-CareBridge'07 Dynamic Global Ltd
-</h3>
-
-<p>
-RC:8734346
-</p>
-
-<p>
-Carebridge07global@gmail.com
-</p>
-
-<p>
-Nigeria:
-+234 802 850 7370
-</p>
-
-<p>
-Oman:
-+968 78538712
-</p>
-
-<p>
-Bridging Care.
-Restoring Dignity.
-Transforming Lives.
-</p>
-
-</footer>
-
-<script>
-
-function calculateGDI(){
-
-let d1=
-parseFloat(
-document.getElementById("d1").value
-)||0;
-
-let d2=
-parseFloat(
-document.getElementById("d2").value
-)||0;
-
-let d3=
-parseFloat(
-document.getElementById("d3").value
-)||0;
-
-let d4=
-parseFloat(
-document.getElementById("d4").value
-)||0;
-
-let d5=
-parseFloat(
-document.getElementById("d5").value
-)||0;
-
-let gdi=
-(0.25*d1)+
-(0.20*d2)+
-(0.25*d3)+
-(0.15*d4)+
-(0.15*d5);
-
-document
-.getElementById("result")
-.innerHTML=
-gdi.toFixed(2);
-
-}
-
-</script>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-area">
+                <img src="official-logo.png" alt="CareBridge'07 Dynamic Global Ltd Official Logo">
+                <div class="logo-text">
+                    <h1>CAREBRIDGE'07</h1>
+                    <span>RC: 8734346 • GOVTECH ENTERPRISE</span>
+                </div>
+            </div>
+            <div>
+                <a href="#contact" class="btn-premium" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Partnership Portal</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO PROFILE -->
+    <section class="hero">
+        <div class="container">
+            <h2>Bridging Care. Restoring Dignity.<br>Transforming Lives.</h2>
+            <p>Building auditable care metrics, digital governance tools, and evidence-based social protection systems for low- and middle-income countries.</p>
+            <div class="hero-meta">
+                <div>FACILITATION</div>
+                <div>•</div>
+                <div>POLICY CONSULTANCY</div>
+                <div>•</div>
+                <div>HUMANITARIAN DEVELOPMENT</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE CRISIS & VISION (WHY WE EXIST) -->
+    <section class="section-padding narrative">
+        <div class="container narrative-box">
+            <div class="section-header">
+                <span>The Narrative Focus</span>
+                <h2>Why We Exist</h2>
+            </div>
+            <p>Every year, millions of young professionals migrate to global economic centres in search of opportunities. Behind these journeys are ageing parents, children, caregivers and communities navigating completely new realities of care and support.</p>
+            <p>Traditional family systems that once protected the vulnerable are under strain. Yet developmental conversations often focus strictly on basic economic indicators while completely overlooking the core human relationships that sustain societies.</p>
+            <p>CareBridge'07 Dynamic Global Ltd was founded to address this invisible crisis by placing human dignity, structured care systems, social protection, and evidence-driven innovation directly at the center of development planning.</p>
+            <div class="blockquote-premium">
+                "Development is not only about economic growth. It is also about who is cared for, who is left behind, and how societies structurally protect human dignity across generations."
+            </div>
+        </div>
+    </section>
+
+    <!-- STRATEGIC PILLARS & SERVICES -->
+    <section class="section-padding services-section">
+        <div class="container">
+            <div class="section-header text-center" style="text-align: center;">
+                <span>Institutional Capability</span>
+                <h2>Professional Services & Pillars</h2>
+            </div>
+            <div class="grid-3">
+                <div class="premium-card">
+                    <h3>📑 Policy Advisory</h3>
+                    <p>Design of social protection frameworks, ageing policy reforms, child safeguarding systems, and dignity-centred governance models for ministries, municipalities, and international development agencies.</p>
+                </div>
+                <div class="premium-card">
+                    <h3>📊 Social Protection Metrics</h3>
+                    <p>Development of measurable governance indices including the Geriatric Dignity Index (GDI), Developmental Agency Index (DAI), Caregiver Resilience Index (CRI), and other custom auditable metrics.</p>
+                </div>
+                <div class="premium-card">
+                    <h3>📈 Monitoring & Evaluation</h3>
+                    <p>Impact evaluations, baseline studies, beneficiary assessments, vulnerability mapping, programme audits, and third-party data validation for donor-funded interventions.</p>
+                </div>
+                <div class="premium-card">
+                    <h3>💻 Dashboard Architecture</h3>
+                    <p>Interactive policy dashboards, offline mobile data collection ecosystems, predictive analytics engines, and real-time decision-support platforms for public systems.</p>
+                </div>
+                <div class="premium-card">
+                    <h3>🎓 Capacity & Certification</h3>
+                    <p>Structured training and framework certification programmes for caregivers, social workers, community health officers, academic institutions, and public personnel.</p>
+                </div>
+                <div class="premium-card">
+                    <h3>🛡️ Safeguard Auditing</h3>
+                    <p>Institutional baseline safeguarding assessments, active GDI deployment, DAI implementation metrics, elder protection systems, and comprehensive dignity risk reporting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PRODUCTS / REGIONAL VALIDATION DASHBOARDS -->
+    <section class="section-padding products-section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <span>GovTech Systems</span>
+                <h2>Care Governance Dashboards</h2>
+            </div>
+            <div class="grid-3">
+                <div class="premium-card">
+                    <h3 style="font-size:1.15rem;">GDI Analytics Engine</h3>
+                    <p>Assessment framework mapping metrics across Autonomy, Agency, Psychosocial Legacy, Security, and Public Participation.</p>
+                    <div class="dashboard-btn-group">
+                        <a href="gdi-dashboard.html" class="btn-secondary">Launch Dashboard</a>
+                    </div>
+                </div>
+                <div class="premium-card">
+                    <h3 style="font-size:1.15rem;">DAI Safeguarding Portal</h3>
+                    <p>Developmental Agency Index analytics dashboard built specifically for child and youth protection tracking inside educational frameworks.</p>
+                    <div class="dashboard-btn-group">
+                        <a href="dai-dashboard.html" class="btn-secondary">Launch Portal</a>
+                    </div>
+                </div>
+                <div class="premium-card">
+                    <h3 style="font-size:1.15rem;">Global Intelligence Center</h3>
+                    <p>Cross-regional institutional visualization generating programmatic validation, data charts, and direct policy intelligence reporting.</p>
+                    <div class="dashboard-btn-group">
+                        <a href="analytics.html" class="btn-secondary">Open Analytics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE BIOGRAPHY SECTION (FOUNDER LEFT, PIC HEADSHOT RIGHT ACCORDING TO DESIGN PRINCIPLES) -->
+    <section class="section-padding founder-section">
+        <div class="container">
+            <div class="founder-flex">
+                <!-- Text on Left Column -->
+                <div class="founder-text-column">
+                    <div class="section-header" style="margin-bottom: 2rem;">
+                        <span>Executive Leadership</span>
+                        <h2>Ayomide Idris Sanni</h2>
+                    </div>
+                    <div class="founder-title">Founder & Managing Director</div>
+                    <div class="founder-bio">
+                        <p>Ayomide Idris Sanni is a social policy innovator, public administration researcher, and the founder of CareBridge’07 Dynamic Global Ltd. His extensive work sits explicitly at the intersection of social protection, governance analytics, and human-centred technology infrastructure.</p>
+                        <p>He specializes in designing and deploying innovative, mathematically grounded metrics that effectively bridge the critical structural gap between macro-level social policy design and measurable, localized human outcomes, particularly within low- and middle-income countries (LMICs).</p>
+                        <p>Ayomide is the principal architect of the emerging Care Governance Architecture (CGA)—an integrated ecosystem of auditable metrics designed to successfully transform human dignity from a moral aspiration into an evidence-based governance asset.</p>
+                    </div>
+                    
+                    <div class="founder-lists">
+                        <div>
+                            <h4>Frameworks Developed</h4>
+                            <ul>
+                                <li>Geriatric Dignity Index (GDI)</li>
+                                <li>Developmental Agency Index (DAI)</li>
+                                <li>Care Governance Architecture (CGA)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Authored Volumes</h4>
+                            <ul>
+                                <li>The Dignity of Care</li>
+                                <li>The Care Governance Deficit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Headshot Picture Precisely Locked on Right Column -->
+                <div class="founder-image-column">
+                    <div class="founder-image-wrapper">
+                        <!-- Standardized asset call maps precisely here -->
+                        <img src="ayomide.jpg" alt="Ayomide Idris Sanni, MSW - Founder & Managing Director">
+                        <h3 style="font-size:1.15rem; font-family:'Inter', sans-serif; font-weight:600; margin-bottom:0.25rem;">Ayomide I. Sanni, MSW</h3>
+                        <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1rem;">Policy Researcher & GovTech Innovator</p>
+                        <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" class="social-link" target="_blank">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOARD & ADVISORY TEAM -->
+    <section class="section-padding team-section">
+        <div class="container">
+            <div class="section-header">
+                <span>Institutional Strength</span>
+                <h2>Leadership & Advisory Team</h2>
+            </div>
+            <div class="grid-3">
+                <div class="team-card">
+                    <h3>Sotubo Olurotimi Olumide, MSW, RSW</h3>
+                    <div class="team-role">Senior Executive, Care Governance</div>
+                    <p>Former Permanent Secretary, Ogun State Civil Service. British Registered Social Worker with over three decades of mastery in social welfare administration and public policy governance.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Waheed Bamidele Balogun, FCILRM</h3>
+                    <div class="team-role">Head of Monitoring & Risk</div>
+                    <p>Seasoned corporate governance expert with over twenty years of leadership in internal controls, operational compliance systems, and institutional accountability frameworks.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Bamidele Adetoye, M.Sc.</h3>
+                    <div class="team-role">Lead Consultant, Youth Services</div>
+                    <p>International Human Services Specialist and Psychologist with deep background tracking residential care systems, youth programming, and community welfare initiatives across Africa & North America.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Dr. Aderemi Oluremi</h3>
+                    <div class="team-role">Senior Research Fellow</div>
+                    <p>Academic researcher specializing directly in structural early childhood systems, localized sociology, and evidence-based macro community development frameworks.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Kafayat Opeyemi</h3>
+                    <div class="team-role">Programme Manager, Public Health</div>
+                    <p>Public health practitioner managing scaled community extensions, preventative health mapping, and localized maternal and child tracking systems.</p>
+                </div>
+                <div class="team-card">
+                    <h3>Abdul Ruqeeb Ifedayo</h3>
+                    <div class="team-role">Technical Lead, GovTech</div>
+                    <p>Computer Science specialist managing cross-regional digital architecture, custom metadata visualization dashboards, and security frameworks for data systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD / RESEARCH VAULT -->
+    <section class="section-padding vault-section" id="contact">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <div class="section-header" style="margin-bottom: 1.5rem;">
+                        <span style="color:var(--accent);">Validation Partnership</span>
+                        <h2>Academic & Institutional Vault</h2>
+                    </div>
+                    <p style="color:#94A3B8; margin-bottom:2rem; font-size:1.1rem;">CareBridge'07 Dynamic Global Ltd welcomes validation configurations with Universities, Ministries, Development Partners, and NGOs for cross-border deployment of our metrics architectures.</p>
+                    <a href="mailto:Carebridge07global@gmail.com" class="btn-premium" style="background-color:var(--accent); border-color:var(--accent);">Request Partnership Engagement</a>
+                </div>
+                <div class="vault-grid">
+                    <div class="vault-card">
+                        <h3>Publications Center</h3>
+                        <a href="https://www.amazon.de/dp/B0GXSFP61Z" target="_blank" class="btn-vault" style="margin-bottom: 0.5rem;">The Dignity of Care</a>
+                        <span style="font-size:0.75rem; color:#64748B; display:block;">Amazon KDP Access</span>
+                    </div>
+                    <div class="vault-card">
+                        <h3>Strategic Documents</h3>
+                        <a href="partnership-prospectus.pdf" class="btn-vault" style="margin-bottom:0.5rem;">Prospectus.pdf</a>
+                        <a href="executive-summary.pdf" class="btn-vault">Executive Summary</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>CareBridge'07 Dynamic Global Ltd</h3>
+                <p style="max-width:360px; margin-bottom:1.5rem;">Bridging Care. Restoring Dignity. Transforming Lives. Actuating evidence-driven technology layers over social metrics.</p>
+                <p style="font-size:0.8rem; color:#475569;">Corporate Affairs Commission Registration • RC:8734346</p>
+            </div>
+            <div class="footer-col">
+                <h4>Regional Secretariats</h4>
+                <p><strong>West Africa Hub:</strong><br>Ibadan, Oyo State, Nigeria</p>
+                <p><strong>Middle East Research Office:</strong><br>Sohar, Al Batinah North, Oman</p>
+            </div>
+            <div class="footer-col">
+                <h4>Communications</h4>
+                <p>Carebridge07global@gmail.com</p>
+                <p>NG: +234 802 850 7370</p>
+                <p>OM: +968 78538712</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                &copy; 2026 CareBridge'07 Dynamic Global Ltd. All institutional rights reserved. Built for global auditable social compliance.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
