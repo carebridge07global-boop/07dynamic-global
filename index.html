@@ -1,153 +1,127 @@
- <!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareBridge’07 Dynamic Global Ltd | GovTech & Social Protection Systems</title>
     
-    <!-- Typography: Inter, Playfair Display & Amiri -->
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #0F172A;       /* Sovereign Deep Slate */
-            --primary-light: #1E293B; /* Navy Slate */
-            --accent-gold: #D4AF37;  /* Institutional Gold */
-            --accent-amber: #B45309; /* Deep Warm Amber */
-            --text-main: #334155;
-            --text-light: #64748B;
-            --bg-light: #F8FAFC;
+            --primary-navy: #0A192F;    /* Sovereign Royal Navy */
+            --royal-blue: #1E3A8A;      /* Deep Royal Blue */
+            --accent-gold: #D4AF37;     /* Royal Gold */
+            --bright-gold: #F59E0B;     /* Amber Gold */
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
             --bg-pure: #FFFFFF;
-            --border: #E2E8F0;
-            --max-width: 1140px;
+            --bg-offwhite: #F8FAFC;
+            --border-light: #E2E8F0;
+            --max-width: 1200px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text-main); background-color: var(--bg-pure); line-height: 1.7; -webkit-font-smoothing: antialiased; width: 100%; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary); font-weight: 600; }
-        p { font-size: 1.05rem; font-weight: 400; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background-color: var(--bg-pure); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-navy); font-weight: 700; }
         a { text-decoration: none; transition: all 0.25s ease; }
-        ul { list-style: none; }
 
         .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-        .section-padding { padding: 5.5rem 0; }
+        .section-padding { padding: 5rem 0; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3.5rem; }
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
 
         /* Buttons */
         .btn-gold {
             display: inline-block;
             background-color: var(--accent-gold);
-            color: var(--primary);
-            padding: 0.85rem 2rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            color: var(--primary-navy);
+            padding: 0.8rem 1.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
             border-radius: 4px;
             border: 1px solid var(--accent-gold);
             cursor: pointer;
-            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
         }
-        .btn-gold:hover { background-color: #c29f2e; color: var(--primary); }
+        .btn-gold:hover { background-color: #c29f2e; color: #FFF; }
+
+        .btn-navy {
+            display: inline-block;
+            background-color: var(--primary-navy);
+            color: var(--accent-gold);
+            padding: 0.8rem 1.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 4px;
+            border: 1px solid var(--primary-navy);
+            cursor: pointer;
+        }
+        .btn-navy:hover { background-color: var(--royal-blue); color: #FFF; }
 
         .btn-outline {
             display: inline-block;
             background-color: transparent;
-            color: var(--primary);
-            padding: 0.85rem 2rem;
-            font-size: 0.95rem;
+            color: var(--primary-navy);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid var(--primary);
+            border: 1px solid var(--primary-navy);
             border-radius: 4px;
-            cursor: pointer;
         }
-        .btn-outline:hover { background-color: var(--primary); color: var(--bg-pure); }
+        .btn-outline:hover { background-color: var(--primary-navy); color: #FFF; }
 
-        /* Top Bar & Header */
-        .top-bar { background-color: var(--primary); color: #94A3B8; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid #334155; }
+        /* Top Bar */
+        .top-bar { background-color: var(--primary-navy); color: #94A3B8; font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 2px solid var(--accent-gold); }
         .top-bar-flex { display: flex; justify-content: space-between; align-items: center; }
-        .lang-switch { display: flex; gap: 1rem; align-items: center; }
-        .lang-btn { color: #CBD5E1; cursor: pointer; font-weight: 500; }
-        .lang-btn.active { color: var(--accent-gold); font-weight: 700; }
+        .lang-switch { display: flex; gap: 0.75rem; align-items: center; }
+        .lang-btn { color: #CBD5E1; cursor: pointer; font-weight: 600; }
+        .lang-btn.active { color: var(--accent-gold); }
 
-        header { background-color: var(--bg-pure); border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        
+        /* Header Bar */
+        header { background-color: var(--bg-pure); border-bottom: 1px solid var(--border-light); padding: 1.25rem 0; sticky: top; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         .brand-logo-wrapper { display: flex; align-items: center; gap: 1.25rem; }
-        .logo-img-box {
-            background: #FFFFFF;
-            padding: 6px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-        }
-        .logo-img-box img { height: 52px; width: auto; object-fit: contain; }
-        .logo-text h1 { font-size: 1.2rem; font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.8px; color: var(--primary); line-height: 1.2; }
-        .logo-text span { font-size: 0.72rem; color: var(--accent-amber); font-weight: 600; display: block; letter-spacing: 0.5px; }
+        .logo-img-box img { height: 58px; width: auto; object-fit: contain; }
+        .logo-text h1 { font-size: 1.25rem; font-family: 'Inter', sans-serif; font-weight: 800; color: var(--primary-navy); letter-spacing: 0.5px; }
+        .logo-text span { font-size: 0.75rem; color: var(--bright-gold); font-weight: 700; display: block; letter-spacing: 0.5px; }
 
-        /* Hero */
-        .hero { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: var(--bg-pure); padding: 6.5rem 0; text-align: center; position: relative; }
-        .hero h2 { font-size: 3rem; color: var(--bg-pure); margin-bottom: 1.5rem; line-height: 1.25; }
-        .hero p { font-size: 1.25rem; font-family: 'Playfair Display', serif; font-style: italic; color: #94A3B8; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .hero-cta-group { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+        /* Hero Header */
+        .hero { background: linear-gradient(135deg, #0A192F 0%, #1E3A8A 100%); color: #FFF; padding: 5.5rem 0; text-align: center; border-bottom: 4px solid var(--accent-gold); }
+        .hero h2 { font-size: 3rem; color: #FFF; margin-bottom: 1.25rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; color: #E2E8F0; max-width: 850px; margin: 0 auto 2.5rem; font-weight: 300; }
 
-        /* Sections */
-        .section-header { margin-bottom: 3.5rem; text-align: center; }
-        .section-header span { text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; color: var(--accent-amber); display: block; margin-bottom: 0.5rem; }
-        .section-header h2 { font-size: 2.25rem; }
+        /* Telemetry Cards */
+        .telemetry-card { background: var(--bg-pure); border: 1px solid var(--border-light); border-top: 4px solid var(--accent-gold); border-radius: 8px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
+        .telemetry-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .telemetry-badge { display: inline-block; background-color: rgba(212, 175, 55, 0.15); color: var(--primary-navy); font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; }
 
-        .premium-card { background: var(--bg-pure); border: 1px solid var(--border); padding: 2.5rem; border-radius: 8px; transition: all 0.3s ease; position: relative; }
-        .premium-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(15,23,42,0.08); border-color: var(--accent-gold); }
+        /* Publications Section */
+        .publication-card { background: var(--bg-pure); border: 1px solid var(--border-light); border-radius: 8px; padding: 2.5rem; box-shadow: 0 12px 30px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; }
+        .pub-header-tag { color: var(--accent-gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Book Dashboard & Checkout */
-        .book-section { background-color: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .book-card { display: grid; grid-template-columns: 280px 1fr; gap: 3rem; background: var(--bg-pure); border: 1px solid var(--border); border-radius: 8px; padding: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03); align-items: center; }
-        .book-cover { background: linear-gradient(145deg, #0F172A, #1E293B); color: #FFF; padding: 2.5rem 1.5rem; border-radius: 6px; text-align: center; box-shadow: 0 12px 24px rgba(0,0,0,0.15); border-left: 4px solid var(--accent-gold); }
-        .book-cover h3 { color: #FFF; font-size: 1.5rem; margin-bottom: 1rem; line-height: 1.3; }
-        .book-price-tag { font-size: 1.8rem; font-weight: 700; color: var(--accent-amber); margin: 1.5rem 0; font-family: 'Inter', sans-serif; }
+        /* Executive Leadership */
+        .exec-card { background: var(--bg-offwhite); border: 1px solid var(--border-light); padding: 1.75rem; border-radius: 8px; border-left: 4px solid var(--royal-blue); }
+        .exec-card h4 { font-size: 1.1rem; color: var(--primary-navy); margin-bottom: 0.25rem; }
+        .exec-card span { font-size: 0.85rem; color: var(--bright-gold); font-weight: 700; display: block; margin-bottom: 0.75rem; }
 
         /* Payment Modal */
-        .modal-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(15,23,42,0.75); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(4px); }
-        .modal-box { background: var(--bg-pure); width: 90%; max-width: 550px; padding: 2.5rem; border-radius: 8px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .close-modal { position: absolute; top: 1.25rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; color: var(--text-light); }
+        .modal-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(10,25,47,0.8); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal-box { background: var(--bg-pure); width: 90%; max-width: 520px; padding: 2.5rem; border-radius: 8px; position: relative; border-top: 5px solid var(--accent-gold); }
+        .close-modal { position: absolute; top: 1rem; right: 1.25rem; font-size: 1.5rem; cursor: pointer; color: var(--text-muted); }
+
+        footer { background: var(--primary-navy); color: #94A3B8; padding: 4rem 0 2rem; border-top: 4px solid var(--accent-gold); }
         
-        /* FCMB Detailed Payment Highlight */
-        .fcmb-box { background: #FFFDF0; border: 2px solid var(--accent-gold); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: left; }
-        .fcmb-row { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px dashed #E2E8F0; font-size: 0.95rem; }
-        .fcmb-row:last-child { border-bottom: none; }
-        .fcmb-label { color: var(--text-light); font-weight: 500; }
-        .fcmb-value { color: var(--primary); font-weight: 700; }
-
-        /* Founder Profile */
-        .founder-section { background-color: var(--bg-pure); }
-        .founder-flex { display: flex; gap: 4rem; align-items: flex-start; }
-        .founder-text-column { flex: 1; }
-        .founder-image-column { flex: 0 0 320px; position: sticky; top: 100px; }
-        .founder-image-wrapper { background-color: var(--bg-light); border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; text-align: center; }
-        .founder-image-wrapper img { width: 100%; height: auto; border-radius: 6px; display: block; margin-bottom: 1.25rem; }
-
-        /* Footer */
-        footer { background-color: #0B0F19; color: #94A3B8; padding: 5rem 0 3rem; border-top: 4px solid var(--accent-amber); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3.5rem; }
-        .footer-bottom { border-top: 1px solid #1E293B; padding-top: 2rem; text-align: center; font-size: 0.85rem; }
-
-        @media (max-width: 991px) {
-            .hero h2 { font-size: 2.25rem; }
-            .book-card { grid-template-columns: 1fr; text-align: center; }
-            .founder-flex { flex-direction: column; }
-            .founder-image-column { width: 100%; max-width: 320px; margin: 0 auto; position: static; }
-            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-        }
-        @media (max-width: 600px) {
-            .nav-wrapper { flex-direction: column; text-align: center; }
-            .hero h2 { font-size: 1.85rem; }
-            .top-bar-flex { flex-direction: column; gap: 0.5rem; }
+        @media (max-width: 850px) {
+            .hero h2 { font-size: 2.2rem; }
+            .nav-wrapper { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
@@ -178,7 +152,7 @@
                 </div>
             </div>
             <div>
-                <a href="#consulting" class="btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Book Consultation</a>
+                <a href="#publications" class="btn-gold">Publications Storefront</a>
             </div>
         </div>
     </header>
@@ -187,87 +161,173 @@
     <section class="hero">
         <div class="container">
             <h2>Auditable Care Metrics & Social Protection Governance</h2>
-            <p>"Transforming human dignity, elder protections, and safeguarding metrics into actionable policy intelligence."</p>
-            <div class="hero-cta-group">
-                <a href="#book-store" class="btn-gold">Get The Care Governance Deficit</a>
-                <a href="#consulting" class="btn-outline" style="color: #FFF; border-color: #FFF;">Institutional Advisory</a>
+            <p>Transforming human dignity, geriatric protections, and safeguarding telemetry into policy intelligence for governments and multilateral institutions.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                <a href="#telemetry" class="btn-gold">Explore Policy Telemetry</a>
+                <a href="#publications" class="btn-navy" style="border-color:var(--accent-gold);">Access White Papers</a>
             </div>
         </div>
     </section>
 
-    <!-- BOOK STORE & FCMB PORTAL -->
-    <section class="section-padding book-section" id="book-store">
+    <!-- LIVE TELEMETRY & AUDIT INDEXES -->
+    <section class="section-padding" id="telemetry" style="background-color: var(--bg-offwhite);">
         <div class="container">
-            <div class="section-header">
-                <span>Featured Publication Dashboard</span>
-                <h2>The Care Governance Deficit</h2>
+            <div style="text-align:center; margin-bottom:3.5rem;">
+                <span style="color:var(--bright-gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Quantifiable Social Governance</span>
+                <h2 style="font-size:2.25rem;">Proprietary Policy Telemetry & Indexes</h2>
             </div>
-            
-            <div class="book-card">
-                <div class="book-cover">
-                    <span style="font-size:0.75rem; letter-spacing:1px; color:var(--accent-gold); text-transform:uppercase;">Official Release</span>
-                    <h3>The Care Governance Deficit</h3>
-                    <p style="font-size:0.85rem; color:#94A3B8;">By Ayomide Idris Sanni</p>
-                    <div class="book-price-tag">₦25,000 <span style="font-size:1rem; color:#94A3B8;">/ $30 USD</span></div>
-                    <button class="btn-gold" style="width:100%;" onclick="openPaymentModal()">Purchase & Download</button>
-                </div>
-                <div>
-                    <h3 style="font-size:1.75rem; margin-bottom:1rem;">Rethinking Institutional Protection & Social Resilience</h3>
-                    <p style="margin-bottom:1.25rem;"><em>The Care Governance Deficit</em> presents an architectural blueprint for governments, international NGOs, and social policy planners. It addresses the systemic gap in elder care, child safeguarding, and demographic welfare transitions across low- and middle-income countries.</p>
-                    <ul style="margin-bottom:2rem; line-height:2;">
-                        <li>✔ Theoretical and mathematical frameworks for the <strong>Geriatric Dignity Index (GDI)</strong>.</li>
-                        <li>✔ Implementation models for child safeguarding and institutional dignity audits.</li>
-                        <li>✔ Telemetry models for sub-Saharan African and Middle Eastern social protection systems.</li>
-                    </ul>
-                    <button class="btn-outline" onclick="openPaymentModal()">Direct FCMB Checkout</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CONSULTING & COUNSELING PORTAL -->
-    <section class="section-padding" id="consulting">
-        <div class="container">
-            <div class="section-header">
-                <span>Executive Services</span>
-                <h2>Consulting, Counseling & Advisory Services</h2>
-            </div>
             <div class="grid-3">
-                <div class="premium-card">
-                    <h3>🏛️ GovTech & Social Policy Advisory</h3>
-                    <p>Strategic advisory for government ministries, municipalities, and international development agencies on social protection reform, care architecture design, and dignity frameworks.</p>
+                <div class="telemetry-card">
+                    <span class="telemetry-badge">GERIATRIC DIGNITY INDEX (GDI)</span>
+                    <h3>Institutional Elder Care Auditing</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.25rem;">A multi-variable metric assessing healthcare availability, emotional security, personal agency, and dignity rights across care institutions.</p>
+                    <a href="#publications" class="btn-outline">Download GDI Telemetry Specs</a>
                 </div>
-                <div class="premium-card">
-                    <h3>📊 Institutional Safeguard Audits</h3>
-                    <p>On-site and quantitative deployment of the Geriatric Dignity Index (GDI) and Developmental Agency Index (DAI) for care facilities, schools, and humanitarian programs.</p>
+
+                <div class="telemetry-card">
+                    <span class="telemetry-badge">DEVELOPMENTAL AGENCY INDEX (DAI)</span>
+                    <h3>Child Protection & Safeguarding Telemetry</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.25rem;">An auditable framework quantifying child safety, institutional accountability, and educational anti-bullying climate standards.</p>
+                    <a href="#publications" class="btn-outline">Download DAI Audit Guidelines</a>
                 </div>
-                <div class="premium-card">
-                    <h3>🤝 Family & Caregiver Advisory</h3>
-                    <p>Specialized counseling, care plan assessments, and long-term dignity strategies for families navigating elder care, diaspora care management, and home protection systems.</p>
+
+                <div class="telemetry-card">
+                    <span class="telemetry-badge">CARE GOVERNANCE DEFICIT</span>
+                    <h3>Macro Policy System Analysis</h3>
+                    <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.25rem;">A diagnostic framework for governments evaluating public spending gaps, caregiver social protection deficits, and policy strain.</p>
+                    <a href="#publications" class="btn-outline">Access Policy Framework</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOUNDER PROFILE -->
-    <section class="section-padding founder-section">
+    <!-- PUBLICATIONS & DIGITAL BOOK STOREFRONT -->
+    <section class="section-padding" id="publications">
         <div class="container">
-            <div class="founder-flex">
-                <div class="founder-text-column">
-                    <div class="section-header" style="text-align:left; margin-bottom:1.5rem;">
-                        <span>Founder & Managing Director</span>
-                        <h2>Ayomide Idris Sanni, MSW</h2>
+            <div style="text-align:center; margin-bottom:3.5rem;">
+                <span style="color:var(--bright-gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Institutional Publications</span>
+                <h2 style="font-size:2.25rem;">Books, Executive Summaries & White Papers</h2>
+            </div>
+
+            <div class="grid-2">
+                <!-- BOOK 1: THE DIGNITY OF CARE -->
+                <div class="publication-card">
+                    <div>
+                        <span class="pub-header-tag">Amazon Published Work</span>
+                        <h3 style="font-size:1.75rem; margin:0.5rem 0;">The Dignity of Care</h3>
+                        <p style="font-size:0.9rem; color:var(--bright-gold); font-weight:700; margin-bottom:1rem;">By Ayomide Idris Sanni, MSW</p>
+                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.5rem;">A seminal exploration of dignity-centered social work, elder support architecture, and social protections across emerging economies.</p>
                     </div>
-                    <p style="margin-bottom:1.25rem;">Ayomide Idris Sanni is a social policy innovator, public administration researcher, and founder of CareBridge’07 Dynamic Global Ltd. His work sits at the intersection of social protection, governance analytics, and human-centred technology.</p>
-                    <p style="margin-bottom:1.25rem;">He is the author of <em>The Dignity of Care</em> and <em>The Care Governance Deficit</em>, and creator of the Geriatric Dignity Index (GDI) and Developmental Agency Index (DAI).</p>
+                    <div>
+                        <a href="https://amazon.de/dp/B0GXSFP61Z" target="_blank" class="btn-navy" style="width:100%; text-align:center;">Order on Amazon KDP</a>
+                    </div>
                 </div>
-                <div class="founder-image-column">
-                    <div class="founder-image-wrapper">
-                        <img src="ayomide.jpg" alt="Ayomide Idris Sanni">
-                        <h3 style="font-size:1.1rem; margin-bottom:0.25rem;">Ayomide I. Sanni, MSW</h3>
-                        <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1rem;">Policy Researcher & GovTech Founder</p>
-                        <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank" class="btn-outline" style="padding:0.4rem 1rem; font-size:0.8rem;">LinkedIn Profile</a>
+
+                <!-- BOOK 2: THE CARE GOVERNANCE DEFICIT -->
+                <div class="publication-card" style="border-top:4px solid var(--accent-gold);">
+                    <div>
+                        <span class="pub-header-tag">Direct Enterprise Release</span>
+                        <h3 style="font-size:1.75rem; margin:0.5rem 0;">The Care Governance Deficit</h3>
+                        <p style="font-size:0.9rem; color:var(--bright-gold); font-weight:700; margin-bottom:1rem;">By Ayomide Idris Sanni, MSW</p>
+                        <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">Includes full mathematical models for GDI telemetry, institutional safeguarding audits, and executive summaries for policy planners.</p>
+                        <div style="font-size:1.6rem; font-weight:800; color:var(--primary-navy); margin-bottom:1.5rem;">$35.00 USD</div>
                     </div>
+                    <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                        <button class="btn-gold" style="flex:1;" onclick="openPaymentModal()">Purchase Download ($35 USD)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WHITE PAPERS & EXECUTIVE SUMMARIES DOWNLOAD BOX -->
+            <div style="margin-top:3rem; background:var(--bg-offwhite); border:1px solid var(--border-light); padding:2rem; border-radius:8px; text-align:center;">
+                <h3 style="font-size:1.3rem; margin-bottom:0.5rem;">Download Policy Briefs & Executive Summaries</h3>
+                <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1.25rem;">Access complimentary institutional white papers on the Geriatric Dignity Index and Care Governance Architecture.</p>
+                <a href="mailto:Carebridge07global@gmail.com?subject=Request%20Executive%20White%20Paper" class="btn-outline">Request Institutional White Paper PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT THE AUTHOR & FOUNDER -->
+    <section class="section-padding" style="background-color: var(--bg-offwhite);">
+        <div class="container">
+            <div class="grid-2" style="align-items:center;">
+                <div>
+                    <span style="color:var(--bright-gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Founder & Managing Director</span>
+                    <h2 style="font-size:2.25rem; margin:0.5rem 0 1.25rem;">Ayomide Idris Sanni, MSW</h2>
+                    <p style="margin-bottom:1rem; font-size:1rem; color:var(--text-dark);">Ayomide Idris Sanni is an author, public policy researcher, and founder of CareBridge’07 Dynamic Global Ltd. He holds a Master of Social Work degree from the University of Ibadan and specializes in care governance architecture, geriatric protection metrics, and child safeguarding frameworks.</p>
+                    <p style="margin-bottom:1.5rem; font-size:1rem; color:var(--text-muted);">His research pioneers quantifiable dignity metrics across sub-Saharan Africa and the Sultanate of Oman, advancing auditable social protections for institutional deployment.</p>
+                    <a href="https://www.linkedin.com/in/ayomide-sanni-971840103" target="_blank" class="btn-navy">Connect on LinkedIn</a>
+                </div>
+                <div style="text-align:center;">
+                    <img src="ayomide.jpg" alt="Ayomide Idris Sanni, MSW" style="width:100%; max-width:340px; border-radius:8px; border:4px solid var(--accent-gold); box-shadow:0 15px 35px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE LEADERSHIP TEAM -->
+    <section class="section-padding">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3.5rem;">
+                <span style="color:var(--bright-gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Governance & Management</span>
+                <h2 style="font-size:2.25rem;">Executive Leadership Team</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="exec-card">
+                    <h4>Sotunbo Olurotimi Olumide</h4>
+                    <span>Senior Executive of Care Governance</span>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Leading strategic oversight for institutional care standards and social compliance protocols.</p>
+                </div>
+
+                <div class="exec-card">
+                    <h4>Waheed Bamidele Balogun</h4>
+                    <span>Head of Monitoring & Risk</span>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Directing operational risk assessment, data integrity, and compliance analytics.</p>
+                </div>
+
+                <div class="exec-card">
+                    <h4>Dr. Aderemi Oluremi</h4>
+                    <span>Senior Research Fellow</span>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Overseeing social protection research, index validation, and demographic studies.</p>
+                </div>
+
+                <div class="exec-card">
+                    <h4>Kafayat Opeyemi</h4>
+                    <span>Programme Manager (Public Health)</span>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Managing public health integrations, community welfare outreach, and safeguard deployments.</p>
+                </div>
+
+                <div class="exec-card">
+                    <h4>Abdul Ruqeeb Ifedayo</h4>
+                    <span>Technical Lead (GovTech)</span>
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Spearheading digital platform development, telemetry UI, and algorithmic index tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVISORY & CONSULTING SERVICES (POSITIONED LOWER DOWN) -->
+    <section class="section-padding" id="consulting" style="background-color: var(--bg-offwhite); border-top:1px solid var(--border-light);">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;">
+                <span style="color:var(--bright-gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.85rem;">Institutional Services</span>
+                <h2 style="font-size:2rem;">Consulting, Counseling & Strategic Advisory</h2>
+            </div>
+
+            <div class="grid-3">
+                <div style="background:#FFF; padding:1.75rem; border-radius:6px; border:1px solid var(--border-light);">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">GovTech Advisory</h3>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">Technical consultation for government ministries on policy metrics, care architecture, and welfare monitoring.</p>
+                </div>
+                <div style="background:#FFF; padding:1.75rem; border-radius:6px; border:1px solid var(--border-light);">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">Institutional Auditing</h3>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">Deployment of GDI and DAI audit frameworks for private and public care facilities.</p>
+                </div>
+                <div style="background:#FFF; padding:1.75rem; border-radius:6px; border:1px solid var(--border-light);">
+                    <h3 style="font-size:1.1rem; margin-bottom:0.5rem;">Family & Care Counseling</h3>
+                    <p style="font-size:0.9rem; color:var(--text-muted);">Advisory services and tailored home care strategies for families managing elder care and dignity protections.</p>
                 </div>
             </div>
         </div>
@@ -275,58 +335,46 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container footer-grid">
+        <div class="container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:2.5rem; margin-bottom:2.5rem;">
             <div>
-                <h3 style="color:#FFF; margin-bottom:1rem;">CareBridge'07 Dynamic Global Ltd</h3>
-                <p style="font-size:0.9rem; color:#94A3B8;">Registered Nigerian GovTech & Social Protection Enterprise (RC: 8734346). Building auditable care metrics across West Africa and the Middle East.</p>
+                <h3 style="color:#FFF; font-size:1.2rem; margin-bottom:1rem;">CareBridge'07 Dynamic Global Ltd</h3>
+                <p style="font-size:0.85rem; color:#94A3B8;">Registered GovTech & Social Protection Enterprise (RC: 8734346). Advancing auditable dignity metrics across West Africa and Oman.</p>
             </div>
             <div>
-                <h4 style="color:#FFF; margin-bottom:1rem;">Secretariats</h4>
+                <h4 style="color:var(--accent-gold); margin-bottom:1rem; font-size:0.95rem;">Hubs</h4>
                 <p style="font-size:0.85rem;"><strong>Nigeria Hub:</strong> Ibadan, Oyo State</p>
-                <p style="font-size:0.85rem;"><strong>Oman Office:</strong> Sohar, Al Batinah North</p>
+                <p style="font-size:0.85rem;"><strong>Oman Secretariat:</strong> Sohar, Al Batinah North</p>
             </div>
             <div>
-                <h4 style="color:#FFF; margin-bottom:1rem;">Contact</h4>
+                <h4 style="color:var(--accent-gold); margin-bottom:1rem; font-size:0.95rem;">Contact</h4>
                 <p style="font-size:0.85rem;">Carebridge07global@gmail.com</p>
                 <p style="font-size:0.85rem;">+234 802 850 7370 | +968 78538712</p>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div style="text-align:center; border-top:1px solid #1E293B; padding-top:1.5rem; font-size:0.8rem; color:#64748B;">
             &copy; 2026 CareBridge'07 Dynamic Global Ltd. All rights reserved.
         </div>
     </footer>
 
-    <!-- ACCURATE FCMB PAYMENT MODAL -->
+    <!-- PAYMENT CHECKOUT MODAL ($35 USD WITH FCMB DETAILS) -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-box">
             <span class="close-modal" onclick="closePaymentModal()">&times;</span>
-            <h3 style="font-size:1.5rem; margin-bottom:0.25rem;">Order Confirmation</h3>
-            <p style="font-size:0.9rem; color:var(--text-light);">Complete transfer to CareBridge'07 corporate bank account to receive access:</p>
+            <h3 style="font-size:1.35rem; margin-bottom:0.25rem;">Checkout: The Care Governance Deficit</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Price: <strong>$35.00 USD</strong> (Local transfer conversion accepted)</p>
             
-            <div class="fcmb-box">
-                <div class="fcmb-row">
-                    <span class="fcmb-label">Bank Name</span>
-                    <span class="fcmb-value">First City Monument Bank (FCMB)</span>
-                </div>
-                <div class="fcmb-row">
-                    <span class="fcmb-label">Account Name</span>
-                    <span class="fcmb-value">Carebridge'07 Mobile Account</span>
-                </div>
-                <div class="fcmb-row">
-                    <span class="fcmb-label">Account Number</span>
-                    <span class="fcmb-value" style="font-size:1.1rem; color:var(--accent-amber);">1038078080</span>
-                </div>
-                <div class="fcmb-row">
-                    <span class="fcmb-label">Price</span>
-                    <span class="fcmb-value">₦25,000 NGN / $30 USD</span>
-                </div>
+            <div style="background:#FFFDF0; border:1px solid var(--accent-gold); padding:1.25rem; border-radius:6px; margin:1.25rem 0; font-size:0.9rem;">
+                <div style="color:var(--bright-gold); font-weight:700; font-size:0.75rem; text-transform:uppercase; margin-bottom:0.5rem;">Corporate FCMB Transfer</div>
+                <p><strong>Bank:</strong> First City Monument Bank (FCMB)</p>
+                <p><strong>Account Name:</strong> Carebridge'07 Mobile Account</p>
+                <p><strong>Account Number:</strong> <span style="font-size:1.1rem; color:var(--primary-navy); font-weight:700;">1038078080</span></p>
             </div>
 
-            <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:1.25rem;">
-                Kindly email your transaction receipt/payment notification to <strong>Carebridge07global@gmail.com</strong>. Your electronic book copy and download key will be delivered immediately upon confirmation.
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1.25rem;">
+                Kindly email your receipt/proof of transfer to <strong>Carebridge07global@gmail.com</strong>. Your digital book download link and PDF license will be dispatched instantly.
             </p>
             
-            <button class="btn-gold" style="width:100%; font-size:1rem;" onclick="closePaymentModal()">I Have Sent Payment</button>
+            <button class="btn-gold" style="width:100%; text-align:center;" onclick="closePaymentModal()">I Have Completed Payment</button>
         </div>
     </div>
 
@@ -350,4 +398,4 @@
     </script>
 </body>
 </html>
-          
+           
